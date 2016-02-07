@@ -1,14 +1,14 @@
 //
-//  ViewController.m
-//  WKViewController
+//  AppDelegate.m
+//  Emergency
 //
-//  Created by macairwkcao on 15/10/30.
-//  Copyright © 2015年 CWK. All rights reserved.
+//  Created by 孙恺 on 16/2/6.
+//  Copyright © 2016年 sunkai. All rights reserved.
 //
 
 #import "ViewController.h"
 #import "WKSectionView.h"
-#import "TestViewCotroller.h"
+#import "WarningViewController.h"
 
 #define TABLEVIEW_PULL_RATE 0.6
 
@@ -88,7 +88,7 @@
     _backImageView = [[UIImageView alloc] initWithFrame:backView.bounds];
     _backImageView.image = [UIImage imageNamed:@"bt_mymusic_time_bg_afternoon.jpg"];
     _panView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, PANVIEW_SIZE_HEIGHT)];
-    _panView.backgroundColor = [UIColor redColor];
+    _panView.backgroundColor = [UIColor colorWithRed:238.0f/255.0f green:32.0f/255.0f blue:77.0f/255.0f alpha:1.0f];
     
     _incatorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, 44)];
     [_incatorLabel setText:@"紧急情况请向下拉动"];
@@ -196,7 +196,7 @@
             } completion:^(BOOL finished) {
                 if (finished) {
                     _panView.hidden = YES;
-                    [self presentViewController:[[TestViewCotroller alloc] init] animated:NO completion:nil];
+                    [self presentViewController:[[WarningViewController alloc] init] animated:NO completion:nil];
                 }
             }];
             [scrollView setContentOffset:CGPointMake(0, -DEVICE_SCREEN_HEIGHT) animated:YES];
