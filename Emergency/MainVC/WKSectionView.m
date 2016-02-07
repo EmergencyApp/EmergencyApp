@@ -1,17 +1,14 @@
 //
-//  WKSectionView.m
-//  WKViewController
+//  AppDelegate.m
+//  Emergency
 //
-//  Created by macairwkcao on 15/10/30.
-//  Copyright © 2015年 CWK. All rights reserved.
+//  Created by 孙恺 on 16/2/6.
+//  Copyright © 2016年 sunkai. All rights reserved.
 //
 
 #import "WKSectionView.h"
 
-
-
 @implementation WKSectionView
-
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
@@ -24,12 +21,11 @@
     return self;
 }
 
-
 -(void)setUI
 {
     NSArray *normalImages = @[@"icon_home_localMusic_normal.png",@"icon_home_collection_normal.png",@"icon_home_myPlaylist_normal.png",@"icon_home_musicLibrary_normal.png"];
     NSArray *presslImages = @[@"icon_home_localMusic_press.png",@"icon_home_collection_press.png",@"icon_home_myPlaylist_press.png",@"icon_home_musicLibrary_press.png"];
-    NSArray *title = @[@"本地音乐",@"收藏单曲",@"我的歌单",@"音乐库"];
+    NSArray *title = @[@"1111",@"2222",@"3333",@"4444"];
     
     CGFloat width = self.frame.size.width/4.0;
     for (int i = 0; i < 4; i++) {
