@@ -19,7 +19,7 @@
 #define PANVIEW_SIZE_HEIGHT TABLEVIEW_CONTENTINSET_TOP+22
 #define TABLEVIEW_HIDE_CONTENTSETOFFY -TABLEVIEW_CONTENTINSET_TOP-(DEVICE_SCREEN_HEIGHT/7)
 
-#define PANVIEW_INCATORLABEL_PADDING 32
+#define PANVIEW_INCATORLABEL_PADDING 62
 
 #define TABLEVIEW_HIDE_ANIMATIONS_NSTIMEINTERVAL 0.3
 
@@ -91,9 +91,10 @@
     _panView.backgroundColor = [UIColor redColor];
     
     _incatorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, 44)];
-    [_incatorLabel setText:@"紧急情况请拉动"];
+    [_incatorLabel setText:@"紧急情况请向下拉动"];
     [_incatorLabel setTextAlignment:NSTextAlignmentCenter];
     [_incatorLabel setTextColor:[UIColor whiteColor]];
+    [_incatorLabel setFont:[UIFont systemFontOfSize:26]];
     [_panView addSubview:_incatorLabel];
     [_incatorLabel setCenter:CGPointMake(_panView.frame.size.width/2, _panView.frame.size.height-PANVIEW_INCATORLABEL_PADDING)];
     
@@ -168,11 +169,11 @@
     if (contentOffsetY < TABLEVIEW_HIDE_CONTENTSETOFFY) {
         
         // TODO: Label animation.
-        [_incatorLabel setText:@"松开呼叫紧急情况"];
+        [_incatorLabel setText:@"松开呼叫帮助"];
         
     } else {
         
-        [_incatorLabel setText:@"紧急情况请拉动"];
+        [_incatorLabel setText:@"紧急情况请向下拉动"];
     }
     
 }
