@@ -10,14 +10,16 @@
 #import "WKSectionView.h"
 #import "TestViewCotroller.h"
 
-#define TABLEVIEW_PULL_RATE 0.2
+#define TABLEVIEW_PULL_RATE 0.6
 
 #define DEVICE_SCREEN_HEIGHT self.view.frame.size.height
 #define DEVICE_SCREEN_WIDTH self.view.frame.size.width
 
 #define TABLEVIEW_CONTENTINSET_TOP DEVICE_SCREEN_HEIGHT*TABLEVIEW_PULL_RATE
-#define PANVIEW_SIZE_HEIGHT TABLEVIEW_CONTENTINSET_TOP+40
-#define TABLEVIEW_HIDE_CONTENTSETOFFY -TABLEVIEW_CONTENTINSET_TOP-140
+#define PANVIEW_SIZE_HEIGHT TABLEVIEW_CONTENTINSET_TOP+22
+#define TABLEVIEW_HIDE_CONTENTSETOFFY -TABLEVIEW_CONTENTINSET_TOP-(DEVICE_SCREEN_HEIGHT/7)
+
+#define PANVIEW_INCATORLABEL_PADDING 32
 
 #define TABLEVIEW_HIDE_ANIMATIONS_NSTIMEINTERVAL 0.3
 
@@ -27,6 +29,7 @@
     UIImageView  *_backImageView;
     UITableView *_tableView;
     UIView *_panView;
+    UILabel *_incatorLabel;
     BOOL _hide;
     CGFloat _lastPosition;
 }
@@ -40,6 +43,7 @@
     [super viewDidAppear:animated];
     if (_hide) {
         _panView.hidden = NO;
+//        _incatorLabel.hidden = NO;
         _hide = NO;
         [_tableView setContentOffset:CGPointMake(0, -TABLEVIEW_CONTENTINSET_TOP) animated:YES];
         [UIView animateWithDuration:TABLEVIEW_HIDE_ANIMATIONS_NSTIMEINTERVAL animations:^{
@@ -48,6 +52,8 @@
             [_tableView setContentOffset:CGPointMake(0, -TABLEVIEW_CONTENTINSET_TOP) animated:YES];
             [_tableView scrollsToTop];
             _panView.frame = CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, PANVIEW_SIZE_HEIGHT);
+            
+            [_incatorLabel setCenter:CGPointMake(_panView.frame.size.width/2, _panView.frame.size.height-PANVIEW_INCATORLABEL_PADDING)];
         }];
     }
 }
@@ -83,6 +89,14 @@
     _backImageView.image = [UIImage imageNamed:@"bt_mymusic_time_bg_afternoon.jpg"];
     _panView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, PANVIEW_SIZE_HEIGHT)];
     _panView.backgroundColor = [UIColor redColor];
+    
+    _incatorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, 44)];
+    [_incatorLabel setText:@"紧急情况请拉动"];
+    [_incatorLabel setTextAlignment:NSTextAlignmentCenter];
+    [_incatorLabel setTextColor:[UIColor whiteColor]];
+    [_panView addSubview:_incatorLabel];
+    [_incatorLabel setCenter:CGPointMake(_panView.frame.size.width/2, _panView.frame.size.height-PANVIEW_INCATORLABEL_PADDING)];
+    
     [_backImageView addSubview:_panView];
     [backView addSubview:_backImageView];
     return backView;
@@ -139,8 +153,7 @@
             if (scrollView.isDragging) {
                 [UIView animateWithDuration:TABLEVIEW_HIDE_ANIMATIONS_NSTIMEINTERVAL animations:^{
                     _panView.frame = CGRectMake(0, (contentOffsetY+TABLEVIEW_CONTENTINSET_TOP), DEVICE_SCREEN_WIDTH, PANVIEW_SIZE_HEIGHT);
-
-                                    }];
+                }];
             }
             else {
                 _panView.frame = CGRectMake(0, (contentOffsetY+TABLEVIEW_CONTENTINSET_TOP), DEVICE_SCREEN_WIDTH, PANVIEW_SIZE_HEIGHT);
@@ -152,6 +165,16 @@
     }
     _lastPosition = contentOffsetY;
     
+    if (contentOffsetY < TABLEVIEW_HIDE_CONTENTSETOFFY) {
+        
+        // TODO: Label animation.
+        [_incatorLabel setText:@"松开呼叫紧急情况"];
+        
+    } else {
+        
+        [_incatorLabel setText:@"紧急情况请拉动"];
+    }
+    
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
@@ -159,17 +182,21 @@
     if (contentOffsetY < TABLEVIEW_HIDE_CONTENTSETOFFY) {
         if (!_hide) {
             _hide = YES;
-        [UIView animateWithDuration:TABLEVIEW_HIDE_ANIMATIONS_NSTIMEINTERVAL animations:^{
-            UIEdgeInsets edgeInset = UIEdgeInsetsMake(DEVICE_SCREEN_HEIGHT, 0, 0, 0);
-            _tableView.contentInset = edgeInset;
+            [UIView animateWithDuration:TABLEVIEW_HIDE_ANIMATIONS_NSTIMEINTERVAL animations:^{
+                _panView.frame = CGRectMake(0, -0,DEVICE_SCREEN_WIDTH, 0);
+                
+                UIEdgeInsets edgeInset = UIEdgeInsetsMake(DEVICE_SCREEN_HEIGHT, 0, 0, 0);
+                _tableView.contentInset = edgeInset;
 
-            [_tableView scrollRectToVisible:CGRectMake(0, -TABLEVIEW_CONTENTINSET_TOP, DEVICE_SCREEN_WIDTH, TABLEVIEW_CONTENTINSET_TOP/2) animated:YES];
+                [_tableView scrollRectToVisible:CGRectMake(0, -TABLEVIEW_CONTENTINSET_TOP, DEVICE_SCREEN_WIDTH, TABLEVIEW_CONTENTINSET_TOP/2) animated:YES];
+                [_incatorLabel setCenter:CGPointMake(DEVICE_SCREEN_WIDTH/2, _panView.frame.origin.y-PANVIEW_INCATORLABEL_PADDING)];
 
-            
-            _panView.frame = CGRectMake(0, -0,DEVICE_SCREEN_WIDTH, 0);
-        } completion:^(BOOL finished) {
-                [self presentViewController:[[TestViewCotroller alloc] init] animated:NO completion:nil];
-                _panView.hidden = YES;
+                
+            } completion:^(BOOL finished) {
+                if (finished) {
+                    _panView.hidden = YES;
+                    [self presentViewController:[[TestViewCotroller alloc] init] animated:NO completion:nil];
+                }
             }];
             [scrollView setContentOffset:CGPointMake(0, -DEVICE_SCREEN_HEIGHT) animated:YES];
         }
