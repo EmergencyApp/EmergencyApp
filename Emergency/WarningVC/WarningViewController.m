@@ -16,15 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    self.view.backgroundColor = [UIColor whiteColor];
-    //    self.view.window.backgroundColor = [UIColor whiteColor];
+    
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     imageView.image = [UIImage imageNamed:@"bt_mymusic_time_bg_afternoon.jpg"];
     [self.view addSubview:imageView];
     // Do any additional setup after loading the view.
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:CGRectMake(100, 100, 100, 100)];
-    [button addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
     [button setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:button];
 }
@@ -33,8 +32,7 @@
     [super viewWillAppear:animated];
 }
 
--(void)test
-{
+-(void)dismiss {
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
