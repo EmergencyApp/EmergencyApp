@@ -23,8 +23,7 @@
 
 
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
-{
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate> {
     UIImageView  *_backImageView;
     UITableView *_tableView;
     UIView *_panView;
@@ -37,8 +36,7 @@
 
 #pragma mark - Lifecycle
 
--(void)viewDidAppear:(BOOL)animated
-{
+-(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (_hide) {
         _panView.hidden = NO;
@@ -79,8 +77,7 @@
     
 }
 
--(UIView *)backViewForTableView
-{
+-(UIView *)backViewForTableView {
     UIView * backView = [[UIView alloc] initWithFrame:self.view.bounds];
     _backImageView = [[UIImageView alloc] initWithFrame:backView.bounds];
     _backImageView.image = [UIImage imageNamed:@"bt_mymusic_time_bg_afternoon.jpg"];
@@ -91,18 +88,15 @@
     return backView;
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 40;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellID = @"cellID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
@@ -112,42 +106,35 @@
     return cell;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     WKSectionView *sectionView = [[WKSectionView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, 120)];
     return sectionView;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 120;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0.01;
 }
 
 #pragma mark - Scrolling Animation
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat contentOffsetY = scrollView.contentOffset.y;
     if (_hide) {
         return;
     }
-    if (contentOffsetY >= -TABLEVIEW_CONTENTINSET_TOP)
-    {
+    if (contentOffsetY >= -TABLEVIEW_CONTENTINSET_TOP) {
         _backImageView.frame = CGRectMake(0, -contentOffsetY-TABLEVIEW_CONTENTINSET_TOP, DEVICE_SCREEN_WIDTH, DEVICE_SCREEN_HEIGHT);
         _tableView.showsVerticalScrollIndicator = YES;
     }
-    else
-    {
+    else {
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.bounces = YES;
     }
-    if (contentOffsetY <= -TABLEVIEW_CONTENTINSET_TOP)
-    {
+    if (contentOffsetY <= -TABLEVIEW_CONTENTINSET_TOP) {
         if (!_hide) {
             if (scrollView.isDragging) {
                 [UIView animateWithDuration:TABLEVIEW_HIDE_ANIMATIONS_NSTIMEINTERVAL animations:^{
@@ -155,22 +142,19 @@
 
                                     }];
             }
-            else
-            {
+            else {
                 _panView.frame = CGRectMake(0, (contentOffsetY+TABLEVIEW_CONTENTINSET_TOP), DEVICE_SCREEN_WIDTH, PANVIEW_SIZE_HEIGHT);
             }
         }
     }
-    else
-    {
+    else {
         _panView.frame = CGRectMake(0, 0,DEVICE_SCREEN_WIDTH, PANVIEW_SIZE_HEIGHT);
     }
     _lastPosition = contentOffsetY;
 
 }
 
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     CGFloat contentOffsetY = scrollView.contentOffset.y;
     if (contentOffsetY < TABLEVIEW_HIDE_CONTENTSETOFFY) {
         if (!_hide) {
