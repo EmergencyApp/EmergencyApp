@@ -12,7 +12,9 @@
 
 @end
 
-@implementation WarningViewController
+@implementation WarningViewController {
+    CGFloat _brightness;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,19 +32,28 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    _brightness = [UIScreen mainScreen].brightness;
     [UIView animateWithDuration:0.3 animations:^{
         [self.view setAlpha:0];
     } completion:^(BOOL finished) {
         if (finished) {
             [UIView animateWithDuration:0.5 animations:^{
                 [self.view setAlpha:1];
+                [[UIScreen mainScreen] setBrightness:1.0f];
             }];
         }
     }];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[UIScreen mainScreen] setBrightness:_brightness];
+}
+
 -(void)dismiss {
     [self dismissViewControllerAnimated:NO completion:nil];
+    [[UIScreen mainScreen] setBrightness:_brightness];
 }
 
 - (void)didReceiveMemoryWarning {
