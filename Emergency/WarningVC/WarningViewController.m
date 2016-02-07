@@ -30,6 +30,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view setAlpha:0];
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [UIView animateWithDuration:0.5 animations:^{
+                [self.view setAlpha:1];
+            }];
+        }
+    }];
 }
 
 -(void)dismiss {
