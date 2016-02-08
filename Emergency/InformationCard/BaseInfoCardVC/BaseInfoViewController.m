@@ -7,6 +7,8 @@
 //
 
 #import "BaseInfoViewController.h"
+#import "BaseInfo2ViewController.h"
+#import <STPopup/STPopup.h>
 
 @interface BaseInfoViewController ()
 
@@ -16,7 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"下一步" style:UIBarButtonItemStylePlain target:self action:@selector(push)];
+    [self.navigationItem setRightBarButtonItem:button];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)push {
+    BaseInfo2ViewController *nextStep = [[BaseInfo2ViewController alloc] init];
+//    [self presentViewController:nextStep animated:YES completion:nil];
+    [self.popupController pushViewController:nextStep animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
