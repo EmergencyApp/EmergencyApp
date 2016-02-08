@@ -18,6 +18,8 @@
 		B13A71521C683C1E00B8C536 /* BasicCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13A71511C683C1E00B8C536 /* BasicCardViewController.m */; };
 		B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */; };
 		B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */; };
+		B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */; };
+		B1C06A4D1C68E908009D3D6E /* BaseInfo2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C06A4B1C68E908009D3D6E /* BaseInfo2ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		B1C06A441C68D81A009D3D6E /* BaseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfoViewController.h; sourceTree = "<group>"; };
 		B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoViewController.m; sourceTree = "<group>"; };
 		B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfoViewController.xib; sourceTree = "<group>"; };
+		B1C06A491C68E908009D3D6E /* BaseInfo2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfo2ViewController.h; sourceTree = "<group>"; };
+		B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfo2ViewController.m; sourceTree = "<group>"; };
+		B1C06A4B1C68E908009D3D6E /* BaseInfo2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfo2ViewController.xib; sourceTree = "<group>"; };
 		B50C03735664F5C6F90246DF /* Pods_Emergency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emergency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -150,6 +155,9 @@
 				B1C06A441C68D81A009D3D6E /* BaseInfoViewController.h */,
 				B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */,
 				B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */,
+				B1C06A491C68E908009D3D6E /* BaseInfo2ViewController.h */,
+				B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */,
+				B1C06A4B1C68E908009D3D6E /* BaseInfo2ViewController.xib */,
 			);
 			path = BaseInfoCardVC;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C06A4D1C68E908009D3D6E /* BaseInfo2ViewController.xib in Resources */,
 				B13A71361C662F4000B8C536 /* LaunchScreen.storyboard in Resources */,
 				B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */,
 				B13A71331C662F4000B8C536 /* Assets.xcassets in Resources */,
@@ -288,6 +297,7 @@
 				B13A71281C662F4000B8C536 /* main.m in Sources */,
 				B13A71451C664A9D00B8C536 /* ViewController.m in Sources */,
 				B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */,
+				B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */,
 				B13A71461C664A9D00B8C536 /* WKSectionView.m in Sources */,
 				B13A714A1C67366900B8C536 /* WarningViewController.m in Sources */,
 				B13A71521C683C1E00B8C536 /* BasicCardViewController.m in Sources */,
