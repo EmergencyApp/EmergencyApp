@@ -10,6 +10,9 @@
 #import "WKSectionView.h"
 #import "WarningViewController.h"
 
+#import "BaseInfoViewController.h"
+#import <STPopup/STPopup.h>
+
 #define TABLEVIEW_PULL_RATE 0.6
 
 #define DEVICE_SCREEN_HEIGHT self.view.frame.size.height
@@ -101,6 +104,24 @@
     [_backImageView addSubview:_panView];
     [backView addSubview:_backImageView];
     return backView;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    BaseInfoViewController *baseInfoVC = [[BaseInfoViewController alloc] init];
+    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:baseInfoVC];
+    
+    [popupController.navigationBar setBarTintColor:[tableView cellForRowAtIndexPath:indexPath].backgroundColor];
+    [popupController.navigationBar setAlpha:1];
+    [popupController.navigationBar setTintColor:[UIColor whiteColor]];
+    [popupController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
+    [popupController setCornerRadius:10.0f];
+    
+    if (NSClassFromString(@"UIBlurEffect")) {
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        popupController.backgroundView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    }
+    
+    [popupController presentInViewController:self];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

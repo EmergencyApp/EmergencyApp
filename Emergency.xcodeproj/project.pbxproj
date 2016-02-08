@@ -15,6 +15,8 @@
 		B13A71451C664A9D00B8C536 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13A71411C664A9D00B8C536 /* ViewController.m */; };
 		B13A71461C664A9D00B8C536 /* WKSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B13A71431C664A9D00B8C536 /* WKSectionView.m */; };
 		B13A714A1C67366900B8C536 /* WarningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13A71491C67366900B8C536 /* WarningViewController.m */; };
+		B13A71521C683C1E00B8C536 /* BasicCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13A71511C683C1E00B8C536 /* BasicCardViewController.m */; };
+		B13A71571C683FCD00B8C536 /* BaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13A71551C683FCD00B8C536 /* BaseInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		B13A71431C664A9D00B8C536 /* WKSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKSectionView.m; sourceTree = "<group>"; };
 		B13A71481C67366900B8C536 /* WarningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningViewController.h; sourceTree = "<group>"; };
 		B13A71491C67366900B8C536 /* WarningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarningViewController.m; sourceTree = "<group>"; };
+		B13A71501C683C1E00B8C536 /* BasicCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCardViewController.h; sourceTree = "<group>"; };
+		B13A71511C683C1E00B8C536 /* BasicCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCardViewController.m; sourceTree = "<group>"; };
+		B13A71541C683FCD00B8C536 /* BaseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfoViewController.h; sourceTree = "<group>"; };
+		B13A71551C683FCD00B8C536 /* BaseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoViewController.m; sourceTree = "<group>"; };
 		B50C03735664F5C6F90246DF /* Pods_Emergency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emergency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +83,7 @@
 		B13A71251C662F4000B8C536 /* Emergency */ = {
 			isa = PBXGroup;
 			children = (
+				B13A714E1C683C0100B8C536 /* InformationCard */,
 				B13A71471C67365100B8C536 /* WarningVC */,
 				B13A713D1C664A9D00B8C536 /* MainVC */,
 				B13A71291C662F4000B8C536 /* AppDelegate.h */,
@@ -115,6 +122,33 @@
 				B13A71491C67366900B8C536 /* WarningViewController.m */,
 			);
 			path = WarningVC;
+			sourceTree = "<group>";
+		};
+		B13A714E1C683C0100B8C536 /* InformationCard */ = {
+			isa = PBXGroup;
+			children = (
+				B13A71531C683FAC00B8C536 /* BaseInfoCardVC */,
+				B13A714F1C683C0100B8C536 /* BasicCardVC */,
+			);
+			path = InformationCard;
+			sourceTree = "<group>";
+		};
+		B13A714F1C683C0100B8C536 /* BasicCardVC */ = {
+			isa = PBXGroup;
+			children = (
+				B13A71501C683C1E00B8C536 /* BasicCardViewController.h */,
+				B13A71511C683C1E00B8C536 /* BasicCardViewController.m */,
+			);
+			path = BasicCardVC;
+			sourceTree = "<group>";
+		};
+		B13A71531C683FAC00B8C536 /* BaseInfoCardVC */ = {
+			isa = PBXGroup;
+			children = (
+				B13A71541C683FCD00B8C536 /* BaseInfoViewController.h */,
+				B13A71551C683FCD00B8C536 /* BaseInfoViewController.m */,
+			);
+			path = BaseInfoCardVC;
 			sourceTree = "<group>";
 		};
 		F6C979F6642390C9C41195B3 /* Pods */ = {
@@ -249,8 +283,10 @@
 				B13A712B1C662F4000B8C536 /* AppDelegate.m in Sources */,
 				B13A71281C662F4000B8C536 /* main.m in Sources */,
 				B13A71451C664A9D00B8C536 /* ViewController.m in Sources */,
+				B13A71571C683FCD00B8C536 /* BaseInfoViewController.m in Sources */,
 				B13A71461C664A9D00B8C536 /* WKSectionView.m in Sources */,
 				B13A714A1C67366900B8C536 /* WarningViewController.m in Sources */,
+				B13A71521C683C1E00B8C536 /* BasicCardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
