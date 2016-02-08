@@ -107,6 +107,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
+    
     BaseInfoViewController *baseInfoVC = [[BaseInfoViewController alloc] init];
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:baseInfoVC];
     
