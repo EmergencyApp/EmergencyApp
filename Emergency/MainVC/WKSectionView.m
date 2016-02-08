@@ -23,12 +23,16 @@
 
 -(void)setUI
 {
-    NSArray *normalImages = @[@"icon_home_localMusic_normal.png",@"icon_home_collection_normal.png",@"icon_home_myPlaylist_normal.png",@"icon_home_musicLibrary_normal.png"];
-    NSArray *presslImages = @[@"icon_home_localMusic_press.png",@"icon_home_collection_press.png",@"icon_home_myPlaylist_press.png",@"icon_home_musicLibrary_press.png"];
-    NSArray *title = @[@"1111",@"2222",@"3333",@"4444"];
+//    NSArray *normalImages = @[@"icon_home_localMusic_normal.png",@"icon_home_collection_normal.png",@"icon_home_myPlaylist_normal.png",@"icon_home_musicLibrary_normal.png"];
+//    NSArray *presslImages = @[@"icon_home_localMusic_press.png",@"icon_home_collection_press.png",@"icon_home_myPlaylist_press.png",@"icon_home_musicLibrary_press.png"];
     
-    CGFloat width = self.frame.size.width/4.0;
-    for (int i = 0; i < 4; i++) {
+    NSArray *normalImages = @[@"icon_home_localMusic_normal.png", @"icon_home_localMusic_normal.png", @"icon_home_localMusic_normal.png"];
+    NSArray *presslImages = @[@"icon_home_localMusic_normal.png", @"icon_home_localMusic_normal.png", @"icon_home_localMusic_normal.png"];
+    
+    NSArray *title = @[@"应用设置",@"常用药管理",@"紧急联系人"];
+    
+    CGFloat width = self.frame.size.width/3.0;
+    for (int i = 0; i < 3; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setImage:[UIImage imageNamed:normalImages[i]] forState:UIControlStateNormal];
         button.backgroundColor = [UIColor blueColor];

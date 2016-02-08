@@ -108,7 +108,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 40;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -117,7 +117,37 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"测试%ld",indexPath.row];
+//    cell.textLabel.text = [NSString stringWithFormat:@"测试%ld",indexPath.row];
+    
+    switch (indexPath.row) {
+        case 0:
+            [cell.textLabel setText:@"基本信息"];
+            break;
+        case 1:
+            [cell.textLabel setText:@"家族及遗传病史"];
+            break;
+        case 2:
+            [cell.textLabel setText:@"慢性病"];
+            break;
+        case 3:
+            [cell.textLabel setText:@"药物使用记录"];
+            break;
+        case 4:
+            [cell.textLabel setText:@"过敏反应"];
+            break;
+        case 5:
+            [cell.textLabel setText:@"医疗记录"];
+            break;
+        case 6:
+            [cell.textLabel setText:@"生活习惯"];
+            break;
+        case 7:
+            [cell.textLabel setText:@"免疫接种记录"];
+            break;
+        default:
+            break;
+    }
+    
     return cell;
 }
 
