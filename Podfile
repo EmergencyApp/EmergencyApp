@@ -5,4 +5,6 @@ target 'Emergency' do
 pod 'IQKeyboardManager'
 pod 'APPaginalTableView'
 pod 'STPopup'
+pod 'BSErrorMessageView'
+
 end
