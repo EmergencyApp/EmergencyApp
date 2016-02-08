@@ -13,6 +13,8 @@
 #import "BaseInfoViewController.h"
 #import <STPopup/STPopup.h>
 
+#import <Colours/Colours.h>
+
 #define TABLEVIEW_PULL_RATE 0.6
 
 #define DEVICE_SCREEN_HEIGHT self.view.frame.size.height
@@ -82,6 +84,7 @@
     _tableView.contentInset = edgeInset;
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.backgroundView = [self backViewForTableView];
+    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [self.view addSubview:_tableView];
     
 }
@@ -145,31 +148,40 @@
     switch (indexPath.row) {
         case 0:
             [cell.textLabel setText:@"基本信息"];
+            [cell setBackgroundColor:[UIColor black50PercentColor]];
             break;
         case 1:
             [cell.textLabel setText:@"家族及遗传病史"];
+            [cell setBackgroundColor:[UIColor watermelonColor]];
             break;
         case 2:
             [cell.textLabel setText:@"慢性病"];
+            [cell setBackgroundColor:[UIColor strawberryColor]];
             break;
         case 3:
             [cell.textLabel setText:@"药物使用记录"];
+            [cell setBackgroundColor:[UIColor raspberryColor]];
             break;
         case 4:
             [cell.textLabel setText:@"过敏反应"];
+            [cell setBackgroundColor:[UIColor pinkLipstickColor]];
             break;
         case 5:
             [cell.textLabel setText:@"医疗记录"];
+            [cell setBackgroundColor:[UIColor indigoColor]];
             break;
         case 6:
             [cell.textLabel setText:@"生活习惯"];
+            [cell setBackgroundColor:[UIColor emeraldColor]];
             break;
         case 7:
             [cell.textLabel setText:@"免疫接种记录"];
+            [cell setBackgroundColor:[UIColor hollyGreenColor]];
             break;
         default:
             break;
     }
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
     
     return cell;
 }
