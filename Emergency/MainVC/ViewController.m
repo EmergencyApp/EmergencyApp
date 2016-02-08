@@ -114,7 +114,7 @@
     [popupController.navigationBar setAlpha:1];
     [popupController.navigationBar setTintColor:[UIColor whiteColor]];
     [popupController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
-    [popupController setCornerRadius:10.0f];
+    [popupController.containerView.layer setCornerRadius:10.0f];
     
     if (NSClassFromString(@"UIBlurEffect")) {
         UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
