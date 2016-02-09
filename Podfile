@@ -9,5 +9,7 @@ pod 'STPopup'
 pod 'BSErrorMessageView', :git => 'https://github.com/BenjaminSarkisyan/BSErrorMessageView.git'
 pod 'JVFloatLabeledTextField'
 pod 'ZFTokenField'
+pod 'NYSegmentedControl'
+pod 'DateTools'
 
 end
