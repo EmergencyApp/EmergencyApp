@@ -14,9 +14,10 @@
 #import <Colours/Colours.h>
 #import <DateTools/DateTools.h>
 
-@interface BaseInfoViewController ()<UITextFieldDelegate>
+@interface BaseInfoViewController ()<UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic) UIDatePicker *datePicker;
+@property (strong, nonatomic) UIPickerView *sexPicker;
 
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *firstNameTF;
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *lastNameTF;
@@ -96,6 +97,26 @@
     return YES;
 }
 
+#pragma mark - SexPicker Delegate and Datasource
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 5;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSArray *sexArray = @[@"男", @"女", @"无性别", @"双性别", @"其它"];
+    return sexArray[row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSArray *sexArray = @[@"男", @"女", @"无性别", @"双性别", @"其它"];
+    [self.sexTF setText:sexArray[row]];
+}
+
 #pragma mark - DatePicker and segmentControl changed
 
 - (void)birthdayDatePickerChange {
@@ -135,7 +156,11 @@
     [self.birthdayTF setDelegate:self];
     
     [self.sexTF setPlaceholder:@"生理性别"];
+    self.sexPicker = [[UIPickerView alloc] init];
+    [self.sexPicker setDelegate:self];
+    [self.sexPicker setDataSource:self];
     [self setupTextField:self.sexTF];
+    [self.sexTF setInputView:self.sexPicker];
     
     [self.ageLabel setTextColor:[UIColor black75PercentColor]];
     [self.ageLabel setText:@"年龄"];
