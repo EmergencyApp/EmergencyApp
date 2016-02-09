@@ -67,11 +67,9 @@
     // 将此path添加到Quartz上下文中
     CGContextAddPath(context, path.CGPath);
     // 设置本身颜色
-    [[UIColor bananaColor] set];
+    [[UIColor colorWithRed:255.0f/255.0f green:213.0f/255.0f blue:.0f/255.0f alpha:1] set];
     // 设置填充的路径
     CGContextFillPath(context);
-    
-    
     
 }
 
