@@ -20,6 +20,7 @@
 		B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */; };
 		B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */; };
 		B1C06A4D1C68E908009D3D6E /* BaseInfo2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C06A4B1C68E908009D3D6E /* BaseInfo2ViewController.xib */; };
+		B1C06A501C6989BC009D3D6E /* PanView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A4F1C6989BC009D3D6E /* PanView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		B1C06A491C68E908009D3D6E /* BaseInfo2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfo2ViewController.h; sourceTree = "<group>"; };
 		B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfo2ViewController.m; sourceTree = "<group>"; };
 		B1C06A4B1C68E908009D3D6E /* BaseInfo2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfo2ViewController.xib; sourceTree = "<group>"; };
+		B1C06A4E1C6989BC009D3D6E /* PanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanView.h; sourceTree = "<group>"; };
+		B1C06A4F1C6989BC009D3D6E /* PanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanView.m; sourceTree = "<group>"; };
 		B50C03735664F5C6F90246DF /* Pods_Emergency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emergency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +121,8 @@
 				B13A71411C664A9D00B8C536 /* ViewController.m */,
 				B13A71421C664A9D00B8C536 /* WKSectionView.h */,
 				B13A71431C664A9D00B8C536 /* WKSectionView.m */,
+				B1C06A4E1C6989BC009D3D6E /* PanView.h */,
+				B1C06A4F1C6989BC009D3D6E /* PanView.m */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				B13A712B1C662F4000B8C536 /* AppDelegate.m in Sources */,
 				B13A71281C662F4000B8C536 /* main.m in Sources */,
 				B13A71451C664A9D00B8C536 /* ViewController.m in Sources */,
+				B1C06A501C6989BC009D3D6E /* PanView.m in Sources */,
 				B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */,
 				B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */,
 				B13A71461C664A9D00B8C536 /* WKSectionView.m in Sources */,
