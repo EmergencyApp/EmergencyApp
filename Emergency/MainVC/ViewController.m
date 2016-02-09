@@ -11,6 +11,8 @@
 #import "WarningViewController.h"
 
 #import "BaseInfoViewController.h"
+#import "PanView.h"
+
 #import <STPopup/STPopup.h>
 
 #import <Colours/Colours.h>
@@ -33,7 +35,7 @@
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate> {
     UIImageView  *_backImageView;
     UITableView *_tableView;
-    UIView *_panView;
+    PanView *_panView;
     UILabel *_incatorLabel;
     BOOL _hide;
     CGFloat _lastPosition;
@@ -93,8 +95,8 @@
     UIView * backView = [[UIView alloc] initWithFrame:self.view.bounds];
     _backImageView = [[UIImageView alloc] initWithFrame:backView.bounds];
     _backImageView.image = [UIImage imageNamed:@"bt_mymusic_time_bg_afternoon.jpg"];
-    _panView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, PANVIEW_SIZE_HEIGHT)];
-    _panView.backgroundColor = [UIColor colorWithRed:238.0f/255.0f green:32.0f/255.0f blue:77.0f/255.0f alpha:1.0f];
+    _panView = [[PanView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, PANVIEW_SIZE_HEIGHT)];
+    _panView.backgroundColor = [UIColor clearColor];
     
     _incatorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, 44)];
     [_incatorLabel setText:@"紧急情况请向下拉动"];
