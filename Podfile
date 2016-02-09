@@ -5,7 +5,6 @@ target 'Emergency' do
     
 pod 'Colours'
 pod 'IQKeyboardManager'
-pod 'APPaginalTableView'
 pod 'STPopup'
 pod 'BSErrorMessageView', :git => 'https://github.com/BenjaminSarkisyan/BSErrorMessageView.git'
 pod 'JVFloatLabeledTextField'
