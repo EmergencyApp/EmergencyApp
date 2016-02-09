@@ -59,6 +59,16 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.ageLabel addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.ageLabel removeObserver:self forKeyPath:@"text"];
+}
+
 #pragma mark - Age Label KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
@@ -129,7 +139,6 @@
     
     [self.ageLabel setTextColor:[UIColor black75PercentColor]];
     [self.ageLabel setText:@"年龄"];
-    [self.ageLabel addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
     
     [self.bloodTypeTitleLabel setTextColor:[UIColor black75PercentColor]];
     [self.bloodTypeTitleLabel setText:@"血型"];
