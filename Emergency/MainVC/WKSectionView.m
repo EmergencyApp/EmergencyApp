@@ -7,6 +7,7 @@
 //
 
 #import "WKSectionView.h"
+#import <Colours/Colours.h>
 
 @implementation WKSectionView
 
@@ -61,17 +62,12 @@
     [path addLineToPoint:CGPointMake(0, self.frame.size.height)];
     [path addLineToPoint:CGPointMake(0, 0)];
 
-//    [path fill];
-
-//    [path moveToPoint:CGPointMake(0, 80)];
-//        [path moveToPoint:CGPointMake(self.frame.size.width, 80)];
-//    [path closePath];
     // 创建描边（Quartz）上下文
     CGContextRef context = UIGraphicsGetCurrentContext();
     // 将此path添加到Quartz上下文中
     CGContextAddPath(context, path.CGPath);
     // 设置本身颜色
-    [[UIColor whiteColor] set];
+    [[UIColor bananaColor] set];
     // 设置填充的路径
     CGContextFillPath(context);
     
