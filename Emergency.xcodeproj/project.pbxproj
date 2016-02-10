@@ -16,6 +16,8 @@
 		B13A71461C664A9D00B8C536 /* WKSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B13A71431C664A9D00B8C536 /* WKSectionView.m */; };
 		B13A714A1C67366900B8C536 /* WarningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13A71491C67366900B8C536 /* WarningViewController.m */; };
 		B13A71521C683C1E00B8C536 /* BasicCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13A71511C683C1E00B8C536 /* BasicCardViewController.m */; };
+		B144DF561C6B63E3003AAEE3 /* BaseInfo3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B144DF541C6B63E2003AAEE3 /* BaseInfo3ViewController.m */; };
+		B144DF571C6B63E3003AAEE3 /* BaseInfo3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B144DF551C6B63E2003AAEE3 /* BaseInfo3ViewController.xib */; };
 		B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */; };
 		B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */; };
 		B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */; };
@@ -41,6 +43,9 @@
 		B13A71491C67366900B8C536 /* WarningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarningViewController.m; sourceTree = "<group>"; };
 		B13A71501C683C1E00B8C536 /* BasicCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCardViewController.h; sourceTree = "<group>"; };
 		B13A71511C683C1E00B8C536 /* BasicCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCardViewController.m; sourceTree = "<group>"; };
+		B144DF531C6B63E2003AAEE3 /* BaseInfo3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfo3ViewController.h; sourceTree = "<group>"; };
+		B144DF541C6B63E2003AAEE3 /* BaseInfo3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfo3ViewController.m; sourceTree = "<group>"; };
+		B144DF551C6B63E2003AAEE3 /* BaseInfo3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfo3ViewController.xib; sourceTree = "<group>"; };
 		B1C06A441C68D81A009D3D6E /* BaseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfoViewController.h; sourceTree = "<group>"; };
 		B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoViewController.m; sourceTree = "<group>"; };
 		B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfoViewController.xib; sourceTree = "<group>"; };
@@ -164,6 +169,9 @@
 				B1C06A491C68E908009D3D6E /* BaseInfo2ViewController.h */,
 				B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */,
 				B1C06A4B1C68E908009D3D6E /* BaseInfo2ViewController.xib */,
+				B144DF531C6B63E2003AAEE3 /* BaseInfo3ViewController.h */,
+				B144DF541C6B63E2003AAEE3 /* BaseInfo3ViewController.m */,
+				B144DF551C6B63E2003AAEE3 /* BaseInfo3ViewController.xib */,
 			);
 			path = BaseInfoCardVC;
 			sourceTree = "<group>";
@@ -247,6 +255,7 @@
 				B1C06A4D1C68E908009D3D6E /* BaseInfo2ViewController.xib in Resources */,
 				B13A71361C662F4000B8C536 /* LaunchScreen.storyboard in Resources */,
 				B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */,
+				B144DF571C6B63E3003AAEE3 /* BaseInfo3ViewController.xib in Resources */,
 				B13A71331C662F4000B8C536 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +322,7 @@
 				B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */,
 				B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */,
 				B13A71461C664A9D00B8C536 /* WKSectionView.m in Sources */,
+				B144DF561C6B63E3003AAEE3 /* BaseInfo3ViewController.m in Sources */,
 				B13A714A1C67366900B8C536 /* WarningViewController.m in Sources */,
 				B13A71521C683C1E00B8C536 /* BasicCardViewController.m in Sources */,
 			);
