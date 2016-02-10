@@ -62,8 +62,6 @@
 }
 
 - (void)setupForms {
-    NSLog(@"kk");
-    
     [self.heightTF setPlaceholder:@"身高"];
     [self setupTextField:self.heightTF];
     [self.heightTF setDelegate:self];
