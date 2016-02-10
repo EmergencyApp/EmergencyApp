@@ -15,7 +15,7 @@
 
 #import "InterfaceCustom.h"
 
-@interface BaseInfo2ViewController () <UITextFieldDelegate>
+@interface BaseInfo2ViewController ()
 
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *heightTF;
 @property (weak, nonatomic) IBOutlet NYSegmentedControl *heightSC;
@@ -66,18 +66,21 @@
 - (void)setupForms {
     [self.heightTF setPlaceholder:@"身高"];
     [JVFloatLabeledTextField setupTextField:self.heightTF];
-    [self.heightTF setDelegate:self];
+    [self.heightTF addTarget:self action:@selector(bmiChanged) forControlEvents:UIControlEventEditingChanged];
     [self.heightSC insertSegmentWithTitle:@"英尺" atIndex:0];
     [self.heightSC insertSegmentWithTitle:@"厘米" atIndex:0];
     [self.heightSC reloadData];
     [NYSegmentedControl setupSegmentControl:self.heightSC];
+    [self.heightSC addTarget:self action:@selector(bmiChanged) forControlEvents:UIControlEventValueChanged];
     
     [self.weightTF setPlaceholder:@"体重"];
     [JVFloatLabeledTextField setupTextField:self.weightTF];
+    [self.weightTF addTarget:self action:@selector(bmiChanged) forControlEvents:UIControlEventEditingChanged];
     [self.weightSC insertSegmentWithTitle:@"磅" atIndex:0];
     [self.weightSC insertSegmentWithTitle:@"公斤" atIndex:0];
     [self.weightSC reloadData];
     [NYSegmentedControl setupSegmentControl:self.weightSC];
+    [self.weightSC addTarget:self action:@selector(bmiChanged) forControlEvents:UIControlEventValueChanged];
     
     [self.waistTF setPlaceholder:@"腰围"];
     [JVFloatLabeledTextField setupTextField:self.waistTF];
@@ -89,9 +92,39 @@
     
     [self.bmiTF setPlaceholder:@"BMI"];
     [JVFloatLabeledTextField setupTextField:self.bmiTF];
+    [self.bmiTF setEnabled:NO];
     [self.bmiSC insertSegmentWithTitle:@"BMI" atIndex:0];
     [self.bmiSC reloadData];
     [NYSegmentedControl setupSegmentControl:self.bmiSC];
+}
+
+#pragma mark - BMI changed
+
+- (void)bmiChanged {
+    
+    if (self.weightTF.text.floatValue != 0 && self.heightTF.text.floatValue != 0) {
+        
+        float heightMeter = 0;
+        if (self.heightSC.selectedSegmentIndex) {
+            heightMeter += self.heightTF.text.floatValue * 0.3048;
+        } else {
+            heightMeter += self.heightTF.text.floatValue / 100;
+        }
+        
+        float weightKG = 0;
+        if (self.weightSC.selectedSegmentIndex) {
+            weightKG += self.weightTF.text.floatValue * 0.4535924;
+        } else {
+            weightKG += self.weightTF.text.floatValue;
+        }
+        
+        [self.bmiTF setText:[NSString stringWithFormat:@"%.2f",weightKG/(heightMeter*heightMeter)]];
+        
+    } else {
+        
+        [self.bmiTF setText:@""];
+        
+    }
 }
 
 #pragma mark - Next
