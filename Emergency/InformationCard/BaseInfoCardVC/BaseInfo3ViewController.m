@@ -9,8 +9,11 @@
 #import "BaseInfo3ViewController.h"
 #import <STPopup/STPopup.h>
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
+#import "BaseInfo4ViewController.h"
 
-@interface BaseInfo3ViewController ()
+#import "InterfaceCustom.h"
+
+@interface BaseInfo3ViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *nationalityTF;
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *religionTF;
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *telPersonalTF;
@@ -25,6 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupNavigationItem];
+    [self setupForms];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -42,6 +47,55 @@
         self.landscapeContentSizeInPopup = CGSizeMake(screenSize.height/5*4, screenSize.width/5*3);
     }
     return self;
+}
+
+#pragma mark - Setup forms UI
+
+- (void)setupNavigationItem {
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"下一步" style:UIBarButtonItemStylePlain target:self action:@selector(push)];
+    [self.navigationItem setRightBarButtonItem:button];
+}
+
+- (void)setupForms {
+    [self.nationalityTF setPlaceholder:@"民族"];
+    [JVFloatLabeledTextField setupTextField:self.nationalityTF];
+    [self.nationalityTF setDelegate:self];
+    [self.nationalityTF setTag:0];
+    
+    [self.religionTF setPlaceholder:@"信仰"];
+    [JVFloatLabeledTextField setupTextField:self.religionTF];
+    [self.religionTF setDelegate:self];
+    [self.religionTF setTag:1];
+    
+    [self.telPersonalTF setPlaceholder:@"本人电话"];
+    [JVFloatLabeledTextField setupTextField:self.telPersonalTF];
+    [self.telPersonalTF setDelegate:self];
+    [self.telPersonalTF setTag:2];
+    
+    [self.addrTF setPlaceholder:@"家庭住址"];
+    [JVFloatLabeledTextField setupTextField:self.addrTF];
+    [self.addrTF setDelegate:self];
+    [self.addrTF setTag:3];
+    
+    [self.phoneHomeTF setPlaceholder:@"家庭电话"];
+    [JVFloatLabeledTextField setupTextField:self.phoneHomeTF];
+    [self.phoneHomeTF setDelegate:self];
+    [self.phoneHomeTF setTag:4];
+}
+
+#pragma mark - UITextField delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    [[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
+    return YES;
+}
+
+#pragma mark - Next
+
+- (void)push {
+    BaseInfo4ViewController *nextStep = [[BaseInfo4ViewController alloc] init];
+    [self.popupController pushViewController:nextStep animated:YES];
 }
 
 /*
