@@ -14,6 +14,8 @@
 #import <Colours/Colours.h>
 #import <DateTools/DateTools.h>
 
+#import "InterfaceCustom.h"
+
 @interface BaseInfoViewController ()<UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic) UIDatePicker *datePicker;
@@ -145,17 +147,17 @@
 
 - (void)setupForms {
     [self.firstNameTF setPlaceholder:@"姓"];
-    [self setupTextField:self.firstNameTF];
+    [JVFloatLabeledTextField setupTextField:self.firstNameTF];
     [self.firstNameTF setTag:0];
     [self.firstNameTF setDelegate:self];
     
     [self.lastNameTF setPlaceholder:@"名"];
-    [self setupTextField:self.lastNameTF];
+    [JVFloatLabeledTextField setupTextField:self.lastNameTF];
     [self.lastNameTF setTag:1];
     [self.lastNameTF setDelegate:self];
     
     [self.birthdayTF setPlaceholder:@"出生日期"];
-    [self setupTextField:self.birthdayTF];
+    [JVFloatLabeledTextField setupTextField:self.birthdayTF];
     self.datePicker = [[UIDatePicker alloc] init];
     [self.datePicker setMaximumDate:[NSDate date]];
     [self.datePicker setDatePickerMode:UIDatePickerModeDate];
@@ -168,7 +170,7 @@
     self.sexPicker = [[UIPickerView alloc] init];
     [self.sexPicker setDelegate:self];
     [self.sexPicker setDataSource:self];
-    [self setupTextField:self.sexTF];
+    [JVFloatLabeledTextField setupTextField:self.sexTF];
     [self.sexTF setInputView:self.sexPicker];
     [self.sexTF setTag:3];
     
@@ -185,38 +187,18 @@
     [self.bloodTypeSC insertSegmentWithTitle:@"A型" atIndex:0];
     [self.bloodTypeSC insertSegmentWithTitle:@"不详" atIndex:0];
     [self.bloodTypeSC reloadData];
-    [self setupSegmentControl:self.bloodTypeSC];
+    [NYSegmentedControl setupSegmentControl:self.bloodTypeSC];
     [self.bloodTypeSC setTag:998];
     
     [self.bloodRHSC insertSegmentWithTitle:@"RH阴性" atIndex:0];
     [self.bloodRHSC insertSegmentWithTitle:@"非RH阴性" atIndex:0];
     [self.bloodRHSC insertSegmentWithTitle:@"不详" atIndex:0];
     [self.bloodRHSC reloadData];
-    [self setupSegmentControl:self.bloodRHSC];
+    [NYSegmentedControl setupSegmentControl:self.bloodRHSC];
     [self.bloodRHSC setTag:999];
     
     [self.bloodRHSC addTarget:self action:@selector(bloodTypeChanged) forControlEvents:UIControlEventValueChanged];
     [self.bloodTypeSC addTarget:self action:@selector(bloodTypeChanged) forControlEvents:UIControlEventValueChanged];
-}
-
-- (void)setupSegmentControl:(NYSegmentedControl *)segmentControl {
-    segmentControl.backgroundColor = [UIColor clearColor];
-    segmentControl.borderColor = [UIColor clearColor];
-    segmentControl.segmentIndicatorBorderColor = [UIColor clearColor];
-    segmentControl.segmentIndicatorBackgroundColor = [UIColor whiteColor];
-    segmentControl.segmentIndicatorInset = 0.0f;
-    segmentControl.titleTextColor = [UIColor lightGrayColor];
-    segmentControl.selectedTitleTextColor = [UIColor darkGrayColor];
-    [segmentControl sizeToFit];
-}
-
-- (void)setupTextField:(JVFloatLabeledTextField *)textField {
-    [textField setBackgroundColor:[UIColor clearColor]];
-    [textField setBorderStyle:UITextBorderStyleNone];
-    [textField setTintColor:[UIColor whiteColor]];
-    [textField setTextColor:[UIColor whiteColor]];
-    [textField setFloatingLabelTextColor:[UIColor whiteColor]];
-    [textField setValue:[UIColor black75PercentColor] forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 #pragma mark - Next
@@ -225,8 +207,6 @@
     BaseInfo2ViewController *nextStep = [[BaseInfo2ViewController alloc] init];
     [self.popupController pushViewController:nextStep animated:YES];
 }
-
-
 
 /*
 #pragma mark - Navigation
