@@ -20,6 +20,8 @@
 		B144DF571C6B63E3003AAEE3 /* BaseInfo3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B144DF551C6B63E2003AAEE3 /* BaseInfo3ViewController.xib */; };
 		B144DF5B1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = B144DF5A1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m */; };
 		B144DF5E1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = B144DF5D1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m */; };
+		B18344571C6B837D0069C70B /* BaseInfo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18344551C6B837D0069C70B /* BaseInfo4ViewController.m */; };
+		B18344581C6B837D0069C70B /* BaseInfo4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B18344561C6B837D0069C70B /* BaseInfo4ViewController.xib */; };
 		B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */; };
 		B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */; };
 		B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */; };
@@ -53,6 +55,9 @@
 		B144DF5C1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NYSegmentedControl+InterfaceCustom.h"; sourceTree = "<group>"; };
 		B144DF5D1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NYSegmentedControl+InterfaceCustom.m"; sourceTree = "<group>"; };
 		B144DF5F1C6B7B7B003AAEE3 /* InterfaceCustom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceCustom.h; sourceTree = "<group>"; };
+		B18344541C6B837D0069C70B /* BaseInfo4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfo4ViewController.h; sourceTree = "<group>"; };
+		B18344551C6B837D0069C70B /* BaseInfo4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfo4ViewController.m; sourceTree = "<group>"; };
+		B18344561C6B837D0069C70B /* BaseInfo4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfo4ViewController.xib; sourceTree = "<group>"; };
 		B1C06A441C68D81A009D3D6E /* BaseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfoViewController.h; sourceTree = "<group>"; };
 		B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoViewController.m; sourceTree = "<group>"; };
 		B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfoViewController.xib; sourceTree = "<group>"; };
@@ -180,6 +185,9 @@
 				B144DF531C6B63E2003AAEE3 /* BaseInfo3ViewController.h */,
 				B144DF541C6B63E2003AAEE3 /* BaseInfo3ViewController.m */,
 				B144DF551C6B63E2003AAEE3 /* BaseInfo3ViewController.xib */,
+				B18344541C6B837D0069C70B /* BaseInfo4ViewController.h */,
+				B18344551C6B837D0069C70B /* BaseInfo4ViewController.m */,
+				B18344561C6B837D0069C70B /* BaseInfo4ViewController.xib */,
 			);
 			path = BaseInfoCardVC;
 			sourceTree = "<group>";
@@ -276,6 +284,7 @@
 				B13A71361C662F4000B8C536 /* LaunchScreen.storyboard in Resources */,
 				B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */,
 				B144DF571C6B63E3003AAEE3 /* BaseInfo3ViewController.xib in Resources */,
+				B18344581C6B837D0069C70B /* BaseInfo4ViewController.xib in Resources */,
 				B13A71331C662F4000B8C536 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +350,7 @@
 				B13A71451C664A9D00B8C536 /* ViewController.m in Sources */,
 				B144DF5B1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m in Sources */,
 				B1C06A501C6989BC009D3D6E /* PanView.m in Sources */,
+				B18344571C6B837D0069C70B /* BaseInfo4ViewController.m in Sources */,
 				B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */,
 				B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */,
 				B13A71461C664A9D00B8C536 /* WKSectionView.m in Sources */,
