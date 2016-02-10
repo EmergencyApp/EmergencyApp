@@ -18,6 +18,8 @@
 		B13A71521C683C1E00B8C536 /* BasicCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13A71511C683C1E00B8C536 /* BasicCardViewController.m */; };
 		B144DF561C6B63E3003AAEE3 /* BaseInfo3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B144DF541C6B63E2003AAEE3 /* BaseInfo3ViewController.m */; };
 		B144DF571C6B63E3003AAEE3 /* BaseInfo3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B144DF551C6B63E2003AAEE3 /* BaseInfo3ViewController.xib */; };
+		B144DF5B1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = B144DF5A1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m */; };
+		B144DF5E1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = B144DF5D1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m */; };
 		B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */; };
 		B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */; };
 		B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */; };
@@ -46,6 +48,11 @@
 		B144DF531C6B63E2003AAEE3 /* BaseInfo3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfo3ViewController.h; sourceTree = "<group>"; };
 		B144DF541C6B63E2003AAEE3 /* BaseInfo3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfo3ViewController.m; sourceTree = "<group>"; };
 		B144DF551C6B63E2003AAEE3 /* BaseInfo3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfo3ViewController.xib; sourceTree = "<group>"; };
+		B144DF591C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JVFloatLabeledTextField+InterfaceCustom.h"; sourceTree = "<group>"; };
+		B144DF5A1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JVFloatLabeledTextField+InterfaceCustom.m"; sourceTree = "<group>"; };
+		B144DF5C1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NYSegmentedControl+InterfaceCustom.h"; sourceTree = "<group>"; };
+		B144DF5D1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NYSegmentedControl+InterfaceCustom.m"; sourceTree = "<group>"; };
+		B144DF5F1C6B7B7B003AAEE3 /* InterfaceCustom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceCustom.h; sourceTree = "<group>"; };
 		B1C06A441C68D81A009D3D6E /* BaseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfoViewController.h; sourceTree = "<group>"; };
 		B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoViewController.m; sourceTree = "<group>"; };
 		B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfoViewController.xib; sourceTree = "<group>"; };
@@ -145,6 +152,7 @@
 		B13A714E1C683C0100B8C536 /* InformationCard */ = {
 			isa = PBXGroup;
 			children = (
+				B144DF581C6B78BB003AAEE3 /* InterfaceCustom */,
 				B13A71531C683FAC00B8C536 /* BaseInfoCardVC */,
 				B13A714F1C683C0100B8C536 /* BasicCardVC */,
 			);
@@ -174,6 +182,18 @@
 				B144DF551C6B63E2003AAEE3 /* BaseInfo3ViewController.xib */,
 			);
 			path = BaseInfoCardVC;
+			sourceTree = "<group>";
+		};
+		B144DF581C6B78BB003AAEE3 /* InterfaceCustom */ = {
+			isa = PBXGroup;
+			children = (
+				B144DF591C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.h */,
+				B144DF5A1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m */,
+				B144DF5C1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.h */,
+				B144DF5D1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m */,
+				B144DF5F1C6B7B7B003AAEE3 /* InterfaceCustom.h */,
+			);
+			path = InterfaceCustom;
 			sourceTree = "<group>";
 		};
 		B1C06A5B1C6ADA80009D3D6E /* ThirdPart */ = {
@@ -317,7 +337,9 @@
 			files = (
 				B13A712B1C662F4000B8C536 /* AppDelegate.m in Sources */,
 				B13A71281C662F4000B8C536 /* main.m in Sources */,
+				B144DF5E1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m in Sources */,
 				B13A71451C664A9D00B8C536 /* ViewController.m in Sources */,
+				B144DF5B1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m in Sources */,
 				B1C06A501C6989BC009D3D6E /* PanView.m in Sources */,
 				B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */,
 				B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */,
