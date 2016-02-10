@@ -21,7 +21,6 @@
 		B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */; };
 		B1C06A4D1C68E908009D3D6E /* BaseInfo2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C06A4B1C68E908009D3D6E /* BaseInfo2ViewController.xib */; };
 		B1C06A501C6989BC009D3D6E /* PanView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A4F1C6989BC009D3D6E /* PanView.m */; };
-		B1C06A5A1C6A2F3E009D3D6E /* IZValueSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A591C6A2F3E009D3D6E /* IZValueSelectorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +49,6 @@
 		B1C06A4B1C68E908009D3D6E /* BaseInfo2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfo2ViewController.xib; sourceTree = "<group>"; };
 		B1C06A4E1C6989BC009D3D6E /* PanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanView.h; sourceTree = "<group>"; };
 		B1C06A4F1C6989BC009D3D6E /* PanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanView.m; sourceTree = "<group>"; };
-		B1C06A581C6A2F3E009D3D6E /* IZValueSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IZValueSelectorView.h; sourceTree = "<group>"; };
-		B1C06A591C6A2F3E009D3D6E /* IZValueSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IZValueSelectorView.m; sourceTree = "<group>"; };
 		B50C03735664F5C6F90246DF /* Pods_Emergency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emergency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,7 +93,7 @@
 		B13A71251C662F4000B8C536 /* Emergency */ = {
 			isa = PBXGroup;
 			children = (
-				B1C06A571C6A2F3E009D3D6E /* Views */,
+				B1C06A5B1C6ADA80009D3D6E /* ThirdPart */,
 				B13A714E1C683C0100B8C536 /* InformationCard */,
 				B13A71471C67365100B8C536 /* WarningVC */,
 				B13A713D1C664A9D00B8C536 /* MainVC */,
@@ -171,13 +168,11 @@
 			path = BaseInfoCardVC;
 			sourceTree = "<group>";
 		};
-		B1C06A571C6A2F3E009D3D6E /* Views */ = {
+		B1C06A5B1C6ADA80009D3D6E /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
-				B1C06A581C6A2F3E009D3D6E /* IZValueSelectorView.h */,
-				B1C06A591C6A2F3E009D3D6E /* IZValueSelectorView.m */,
 			);
-			path = Views;
+			path = ThirdPart;
 			sourceTree = "<group>";
 		};
 		F6C979F6642390C9C41195B3 /* Pods */ = {
@@ -313,7 +308,6 @@
 			files = (
 				B13A712B1C662F4000B8C536 /* AppDelegate.m in Sources */,
 				B13A71281C662F4000B8C536 /* main.m in Sources */,
-				B1C06A5A1C6A2F3E009D3D6E /* IZValueSelectorView.m in Sources */,
 				B13A71451C664A9D00B8C536 /* ViewController.m in Sources */,
 				B1C06A501C6989BC009D3D6E /* PanView.m in Sources */,
 				B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */,
