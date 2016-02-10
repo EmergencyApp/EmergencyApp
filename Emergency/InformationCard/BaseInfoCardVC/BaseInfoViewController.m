@@ -54,7 +54,7 @@
     if (self) {
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
         
-        self.contentSizeInPopup = CGSizeMake(screenSize.width/5*4, 266);
+        self.contentSizeInPopup = CGSizeMake(screenSize.width/5*4, 258);
         self.landscapeContentSizeInPopup = CGSizeMake(screenSize.height/5*4, screenSize.width/5*3);
     }
     return self;
