@@ -93,7 +93,11 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self birthdayDatePickerChange];
+    if (textField.tag == 2) {
+        [self birthdayDatePickerChange];
+    }
+    [textField resignFirstResponder];
+    [[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
     return YES;
 }
 
@@ -142,9 +146,13 @@
 - (void)setupForms {
     [self.firstNameTF setPlaceholder:@"姓"];
     [self setupTextField:self.firstNameTF];
+    [self.firstNameTF setTag:0];
+    [self.firstNameTF setDelegate:self];
     
     [self.lastNameTF setPlaceholder:@"名"];
     [self setupTextField:self.lastNameTF];
+    [self.lastNameTF setTag:1];
+    [self.lastNameTF setDelegate:self];
     
     [self.birthdayTF setPlaceholder:@"出生日期"];
     [self setupTextField:self.birthdayTF];
@@ -154,6 +162,7 @@
     [self.datePicker addTarget:self action:@selector(birthdayDatePickerChange) forControlEvents:UIControlEventValueChanged];
     [self.birthdayTF setInputView:self.datePicker];
     [self.birthdayTF setDelegate:self];
+    [self.birthdayTF setTag:2];
     
     [self.sexTF setPlaceholder:@"生理性别"];
     self.sexPicker = [[UIPickerView alloc] init];
@@ -161,6 +170,7 @@
     [self.sexPicker setDataSource:self];
     [self setupTextField:self.sexTF];
     [self.sexTF setInputView:self.sexPicker];
+    [self.sexTF setTag:3];
     
     [self.ageLabel setTextColor:[UIColor black75PercentColor]];
     [self.ageLabel setText:@"年龄"];
