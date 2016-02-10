@@ -13,6 +13,8 @@
 #import <Colours/Colours.h>
 #import <NYSegmentedControl/NYSegmentedControl.h>
 
+#import "InterfaceCustom.h"
+
 @interface BaseInfo2ViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *heightTF;
@@ -63,53 +65,33 @@
 
 - (void)setupForms {
     [self.heightTF setPlaceholder:@"身高"];
-    [self setupTextField:self.heightTF];
+    [JVFloatLabeledTextField setupTextField:self.heightTF];
     [self.heightTF setDelegate:self];
     [self.heightSC insertSegmentWithTitle:@"英尺" atIndex:0];
     [self.heightSC insertSegmentWithTitle:@"厘米" atIndex:0];
     [self.heightSC reloadData];
-    [self setupSegmentControl:self.heightSC];
+    [NYSegmentedControl setupSegmentControl:self.heightSC];
     
     [self.weightTF setPlaceholder:@"体重"];
-    [self setupTextField:self.weightTF];
+    [JVFloatLabeledTextField setupTextField:self.weightTF];
     [self.weightSC insertSegmentWithTitle:@"磅" atIndex:0];
     [self.weightSC insertSegmentWithTitle:@"公斤" atIndex:0];
     [self.weightSC reloadData];
-    [self setupSegmentControl:self.weightSC];
+    [NYSegmentedControl setupSegmentControl:self.weightSC];
     
     [self.waistTF setPlaceholder:@"腰围"];
-    [self setupTextField:self.waistTF];
+    [JVFloatLabeledTextField setupTextField:self.waistTF];
     [self.waistSC insertSegmentWithTitle:@"英尺" atIndex:0];
     [self.waistSC insertSegmentWithTitle:@"市尺" atIndex:0];
     [self.waistSC insertSegmentWithTitle:@"厘米" atIndex:0];
     [self.waistSC reloadData];
-    [self setupSegmentControl:self.waistSC];
+    [NYSegmentedControl setupSegmentControl:self.waistSC];
     
     [self.bmiTF setPlaceholder:@"BMI"];
-    [self setupTextField:self.bmiTF];
+    [JVFloatLabeledTextField setupTextField:self.bmiTF];
     [self.bmiSC insertSegmentWithTitle:@"BMI" atIndex:0];
     [self.bmiSC reloadData];
-    [self setupSegmentControl:self.bmiSC];
-}
-
-- (void)setupSegmentControl:(NYSegmentedControl *)segmentControl {
-    segmentControl.backgroundColor = [UIColor clearColor];
-    segmentControl.borderColor = [UIColor clearColor];
-    segmentControl.segmentIndicatorBorderColor = [UIColor clearColor];
-    segmentControl.segmentIndicatorBackgroundColor = [UIColor whiteColor];
-    segmentControl.segmentIndicatorInset = 0.0f;
-    segmentControl.titleTextColor = [UIColor lightGrayColor];
-    segmentControl.selectedTitleTextColor = [UIColor darkGrayColor];
-    [segmentControl sizeToFit];
-}
-
-- (void)setupTextField:(JVFloatLabeledTextField *)textField {
-    [textField setBackgroundColor:[UIColor clearColor]];
-    [textField setBorderStyle:UITextBorderStyleNone];
-    [textField setTintColor:[UIColor whiteColor]];
-    [textField setTextColor:[UIColor whiteColor]];
-    [textField setFloatingLabelTextColor:[UIColor whiteColor]];
-    [textField setValue:[UIColor black75PercentColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [NYSegmentedControl setupSegmentControl:self.bmiSC];
 }
 
 #pragma mark - Next
