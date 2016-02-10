@@ -8,8 +8,14 @@
 
 #import "BaseInfo3ViewController.h"
 #import <STPopup/STPopup.h>
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 
 @interface BaseInfo3ViewController ()
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *nationalityTF;
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *religionTF;
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *telPersonalTF;
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *addrTF;
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *phoneHomeTF;
 
 @end
 

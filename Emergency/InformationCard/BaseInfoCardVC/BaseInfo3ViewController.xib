@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseInfo3ViewController">
             <connections>
+                <outlet property="addrTF" destination="MPA-vu-ItU" id="RpF-Nu-USI"/>
+                <outlet property="nationalityTF" destination="el9-dU-zqR" id="qKi-DV-Vbg"/>
+                <outlet property="phoneHomeTF" destination="NUk-0a-hW3" id="VtC-5f-SnG"/>
+                <outlet property="religionTF" destination="3Ce-4K-geh" id="9tV-gk-8Io"/>
+                <outlet property="telPersonalTF" destination="S3g-DK-7iX" id="Z0G-gR-1TG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +19,52 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="el9-dU-zqR" customClass="JVFloatLabeledTextField">
+                    <rect key="frame" x="24" y="12" width="552" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ce-4K-geh" customClass="JVFloatLabeledTextField">
+                    <rect key="frame" x="24" y="58" width="552" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S3g-DK-7iX" customClass="JVFloatLabeledTextField">
+                    <rect key="frame" x="24" y="104" width="552" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MPA-vu-ItU" customClass="JVFloatLabeledTextField">
+                    <rect key="frame" x="24" y="150" width="552" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUk-0a-hW3" customClass="JVFloatLabeledTextField">
+                    <rect key="frame" x="24" y="196" width="552" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3Ce-4K-geh" firstAttribute="top" secondItem="el9-dU-zqR" secondAttribute="bottom" constant="16" id="4VT-em-jLU"/>
+                <constraint firstItem="S3g-DK-7iX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="7V6-Gt-jko"/>
+                <constraint firstItem="NUk-0a-hW3" firstAttribute="top" secondItem="MPA-vu-ItU" secondAttribute="bottom" constant="16" id="Eke-qd-bIt"/>
+                <constraint firstItem="NUk-0a-hW3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="Esx-7S-11v"/>
+                <constraint firstAttribute="trailing" secondItem="S3g-DK-7iX" secondAttribute="trailing" constant="24" id="GWC-ef-Qo2"/>
+                <constraint firstItem="MPA-vu-ItU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="TDR-lv-izn"/>
+                <constraint firstAttribute="trailing" secondItem="3Ce-4K-geh" secondAttribute="trailing" constant="24" id="X6c-eG-jyY"/>
+                <constraint firstAttribute="trailing" secondItem="el9-dU-zqR" secondAttribute="trailing" constant="24" id="Xm5-xq-0Dk"/>
+                <constraint firstAttribute="trailing" secondItem="MPA-vu-ItU" secondAttribute="trailing" constant="24" id="ZuJ-v6-heE"/>
+                <constraint firstItem="el9-dU-zqR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="12" id="bfB-31-WS8"/>
+                <constraint firstItem="3Ce-4K-geh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="gDl-cJ-5gT"/>
+                <constraint firstItem="el9-dU-zqR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="gYv-rL-rsH"/>
+                <constraint firstItem="S3g-DK-7iX" firstAttribute="top" secondItem="3Ce-4K-geh" secondAttribute="bottom" constant="16" id="njf-wV-VsA"/>
+                <constraint firstAttribute="trailing" secondItem="NUk-0a-hW3" secondAttribute="trailing" constant="24" id="oLa-Mu-pdB"/>
+                <constraint firstItem="MPA-vu-ItU" firstAttribute="top" secondItem="S3g-DK-7iX" secondAttribute="bottom" constant="16" id="tdQ-bx-vxA"/>
+            </constraints>
+            <point key="canvasLocation" x="238" y="252"/>
         </view>
     </objects>
 </document>
