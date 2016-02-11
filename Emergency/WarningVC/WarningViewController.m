@@ -7,14 +7,22 @@
 //
 
 #import "WarningViewController.h"
+#import <ZLSwipeableView/ZLSwipeableView.h>
+#import <ZLSwipeableView/ViewManager.h>
+#import <ZLSwipeableView/Utils.h>
+#import "BasicCardView.h"
 
-@interface WarningViewController ()
+@interface WarningViewController () <ZLSwipeableViewDataSource, ZLSwipeableViewDelegate>
+
+@property (nonatomic, strong) ZLSwipeableView *cardsStackView;
 
 @end
 
 @implementation WarningViewController {
     CGFloat _brightness;
 }
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +36,12 @@
     [button addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
     [button setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:button];
+    
+    self.cardsStackView = [[ZLSwipeableView alloc] initWithFrame:self.view.frame];
+    self.cardsStackView.dataSource = self;
+    self.cardsStackView.delegate = self;
+    [self.cardsStackView setNumberOfActiveViews:1];
+    [self.view addSubview:self.cardsStackView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,7 +53,8 @@
         if (finished) {
             [UIView animateWithDuration:0.5 animations:^{
                 [self.view setAlpha:1];
-                [[UIScreen mainScreen] setBrightness:1.0f];
+                // TODO: birghtness.
+//                [[UIScreen mainScreen] setBrightness:1.0f];
             }];
         }
     }];
@@ -51,14 +66,27 @@
     [[UIScreen mainScreen] setBrightness:_brightness];
 }
 
--(void)dismiss {
-    [self dismissViewControllerAnimated:NO completion:nil];
-    [[UIScreen mainScreen] setBrightness:_brightness];
+- (void)viewDidLayoutSubviews {
+    [self.cardsStackView loadViewsIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - ZLSwipeableViewDataSource
+- (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
+    BasicCardView *baseinfocard = [[BasicCardView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width/5*4, self.view.frame.size.height/5*4)];
+    [baseinfocard setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2)];
+    return baseinfocard;
+}
+
+#pragma mark - Dismiss
+
+- (void)dismiss {
+    [self dismissViewControllerAnimated:NO completion:nil];
+    [[UIScreen mainScreen] setBrightness:_brightness];
 }
 
 /*
