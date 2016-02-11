@@ -22,6 +22,7 @@
 		B144DF5E1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = B144DF5D1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m */; };
 		B18344571C6B837D0069C70B /* BaseInfo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18344551C6B837D0069C70B /* BaseInfo4ViewController.m */; };
 		B18344581C6B837D0069C70B /* BaseInfo4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B18344561C6B837D0069C70B /* BaseInfo4ViewController.xib */; };
+		B19655B91C6CC70500CD36CE /* BasicCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = B19655B81C6CC70500CD36CE /* BasicCardView.m */; };
 		B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */; };
 		B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */; };
 		B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */; };
@@ -58,6 +59,8 @@
 		B18344541C6B837D0069C70B /* BaseInfo4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfo4ViewController.h; sourceTree = "<group>"; };
 		B18344551C6B837D0069C70B /* BaseInfo4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfo4ViewController.m; sourceTree = "<group>"; };
 		B18344561C6B837D0069C70B /* BaseInfo4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfo4ViewController.xib; sourceTree = "<group>"; };
+		B19655B71C6CC70500CD36CE /* BasicCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCardView.h; sourceTree = "<group>"; };
+		B19655B81C6CC70500CD36CE /* BasicCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCardView.m; sourceTree = "<group>"; };
 		B1C06A441C68D81A009D3D6E /* BaseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfoViewController.h; sourceTree = "<group>"; };
 		B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoViewController.m; sourceTree = "<group>"; };
 		B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfoViewController.xib; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		B13A71251C662F4000B8C536 /* Emergency */ = {
 			isa = PBXGroup;
 			children = (
+				B18344591C6CB47C0069C70B /* WarningCardView */,
 				B1C06A5B1C6ADA80009D3D6E /* ThirdPart */,
 				B13A714E1C683C0100B8C536 /* InformationCard */,
 				B13A71471C67365100B8C536 /* WarningVC */,
@@ -202,6 +206,15 @@
 				B144DF5F1C6B7B7B003AAEE3 /* InterfaceCustom.h */,
 			);
 			path = InterfaceCustom;
+			sourceTree = "<group>";
+		};
+		B18344591C6CB47C0069C70B /* WarningCardView */ = {
+			isa = PBXGroup;
+			children = (
+				B19655B71C6CC70500CD36CE /* BasicCardView.h */,
+				B19655B81C6CC70500CD36CE /* BasicCardView.m */,
+			);
+			path = WarningCardView;
 			sourceTree = "<group>";
 		};
 		B1C06A5B1C6ADA80009D3D6E /* ThirdPart */ = {
@@ -347,6 +360,7 @@
 				B13A712B1C662F4000B8C536 /* AppDelegate.m in Sources */,
 				B13A71281C662F4000B8C536 /* main.m in Sources */,
 				B144DF5E1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m in Sources */,
+				B19655B91C6CC70500CD36CE /* BasicCardView.m in Sources */,
 				B13A71451C664A9D00B8C536 /* ViewController.m in Sources */,
 				B144DF5B1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m in Sources */,
 				B1C06A501C6989BC009D3D6E /* PanView.m in Sources */,
