@@ -11,5 +11,6 @@ pod 'JVFloatLabeledTextField'
 pod 'ZFTokenField'
 pod 'NYSegmentedControl'
 pod 'DateTools'
+pod 'ZLSwipeableView'
 
 end
