@@ -95,6 +95,24 @@
 
 - (void)push {
     BaseInfo4ViewController *nextStep = [[BaseInfo4ViewController alloc] init];
+    
+    [nextStep setName:self.name];
+    [nextStep setBirthday:self.birthday];
+    [nextStep setAge:self.age];
+    [nextStep setSex:self.sex];
+    [nextStep setBloodType:self.bloodType];
+    
+    [nextStep setHeight:self.height];
+    [nextStep setWeight:self.weight];
+    [nextStep setWaist:self.waist];
+    [nextStep setBmi:self.bmi];
+    
+    [nextStep setNationality:self.nationalityTF.text];
+    [nextStep setReligion:self.religionTF.text];
+    [nextStep setTelPersonal:self.telPersonalTF.text];
+    [nextStep setAddr:self.addrTF.text];
+    [nextStep setPhoneHome:self.phoneHomeTF.text];
+    
     [self.popupController pushViewController:nextStep animated:YES];
 }
 

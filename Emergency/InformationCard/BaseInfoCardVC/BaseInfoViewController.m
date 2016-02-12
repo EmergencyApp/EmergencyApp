@@ -205,6 +205,13 @@
 
 - (void)push {
     BaseInfo2ViewController *nextStep = [[BaseInfo2ViewController alloc] init];
+    
+    [nextStep setName:[NSString stringWithFormat:@"%@%@", self.firstNameTF.text, self.lastNameTF.text]];
+    [nextStep setBirthday:self.birthdayTF.text];
+    [nextStep setAge:self.ageLabel.text];
+    [nextStep setSex:self.sexTF.text];
+    [nextStep setBloodType:[NSString stringWithFormat:@"%@%@",[self.bloodRHSC titleForSegmentAtIndex:self.bloodRHSC.selectedSegmentIndex], [self.bloodTypeSC titleForSegmentAtIndex:self.bloodTypeSC.selectedSegmentIndex]]];
+    
     [self.popupController pushViewController:nextStep animated:YES];
 }
 

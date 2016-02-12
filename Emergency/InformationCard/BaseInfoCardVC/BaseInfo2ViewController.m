@@ -131,6 +131,18 @@
 
 - (void)push {
     BaseInfo3ViewController *nextStep = [[BaseInfo3ViewController alloc] init];
+    
+    [nextStep setName:self.name];
+    [nextStep setBirthday:self.birthday];
+    [nextStep setAge:self.age];
+    [nextStep setSex:self.sex];
+    [nextStep setBloodType:self.bloodType];
+    
+    [nextStep setHeight:self.heightTF.text];
+    [nextStep setWeight:self.weightTF.text];
+    [nextStep setWaist:self.waistTF.text];
+    [nextStep setBmi:self.bmiTF.text];
+    
     [self.popupController pushViewController:nextStep animated:YES];
 }
 

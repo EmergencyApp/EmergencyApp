@@ -11,6 +11,8 @@
 #import <NYSegmentedControl/NYSegmentedControl.h>
 #import <Colours/Colours.h>
 
+#import "HMFileManager.h"
+
 #import "InterfaceCustom.h"
 
 @interface BaseInfo4ViewController ()
@@ -93,6 +95,29 @@
 #pragma mark - Next
 
 - (void)push {
+    NSArray *array = @[@[self.name,
+                         self.birthday,
+                         self.age,
+                         self.sex,
+                         self.bloodType],
+                       @[self.height,
+                         self.weight,
+                         self.waist,
+                         self.bmi],
+                       @[self.nationality,
+                         self.religion,
+                         self.telPersonal,
+                         self.addr,
+                         self.phoneHome],
+                       @[[self.eatingSC titleForSegmentAtIndex:self.eatingSC.selectedSegmentIndex],
+                         [self.washingSC titleForSegmentAtIndex:self.washingSC.selectedSegmentIndex],
+                         [self.wearingSC titleForSegmentAtIndex:self.wearingSC.selectedSegmentIndex],
+                         [self.toiletSC titleForSegmentAtIndex:self.toiletSC.selectedSegmentIndex],
+                         [self.activitySC titleForSegmentAtIndex:self.activitySC.selectedSegmentIndex]]
+                       ];
+    
+    [HMFileManager saveObject:array byFileName:@"baseInfoArray"];
+    
 //    BaseInfo4ViewController *nextStep = [[BaseInfo4ViewController alloc] init];
 //    [self.popupController pushViewController:nextStep animated:YES];
     [self.popupController dismiss];
