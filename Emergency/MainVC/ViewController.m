@@ -17,6 +17,8 @@
 
 #import <Colours/Colours.h>
 
+#import <TOWebViewController/TOWebViewController.h>
+
 #define TABLEVIEW_PULL_RATE 0.6
 
 #define DEVICE_SCREEN_HEIGHT self.view.frame.size.height
@@ -40,6 +42,8 @@
     BOOL _hide;
     CGFloat _lastPosition;
 }
+
+@property (strong, nonatomic) UIWebView *webview;
 @end
 
 @implementation ViewController
@@ -190,6 +194,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     WKSectionView *sectionView = [[WKSectionView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, 120)];
+    [sectionView.btn1 addTarget:self action:@selector(drug) forControlEvents:UIControlEventTouchUpInside];
     return sectionView;
 }
 
@@ -272,4 +277,37 @@
     }
 }
 
+- (void)drug {
+    NSString *string = [[NSBundle mainBundle] pathForResource:@"drug" ofType:@"html"];
+    
+//    NSLog(@"%@",string);
+    
+    UIViewController *vc = [[UIViewController alloc]init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.webview = [[UIWebView alloc] initWithFrame:self.view.frame];
+    
+    [vc.view addSubview:self.webview];
+    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:string] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:20]];
+    [self presentViewController:navigationController animated:YES completion:^{
+        UIBarButtonItem *barbtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(dismiss)];
+        [vc.navigationItem setRightBarButtonItem:barbtn];
+        
+        UIBarButtonItem *mainPagebtn = [[UIBarButtonItem alloc] initWithTitle:@"目录" style:UIBarButtonItemStylePlain target:self action:@selector(mainPage)];
+        UIBarButtonItem *returnPagebtn = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self.webview action:@selector(goBack)];
+        [vc.navigationItem setLeftBarButtonItems:@[mainPagebtn, returnPagebtn]];
+    }];
+    
+//    TOWebViewController *webViewController = [[TOWebViewController alloc] initWithURL:[NSURL URLWithString:string]];
+//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
+//    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+- (void)dismiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)mainPage {
+    NSString *string = [[NSBundle mainBundle] pathForResource:@"drug" ofType:@"html"];
+    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:string] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:20]];
+}
 @end
