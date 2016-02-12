@@ -30,22 +30,46 @@
     NSArray *normalImages = @[@"icon_home_localMusic_normal.png", @"icon_home_localMusic_normal.png", @"icon_home_localMusic_normal.png"];
     NSArray *presslImages = @[@"icon_home_localMusic_normal.png", @"icon_home_localMusic_normal.png", @"icon_home_localMusic_normal.png"];
     
-    NSArray *title = @[@"应用设置",@"常用药管理",@"紧急联系人"];
+    NSArray *title = @[@"常用药查询", @"应用设置",@"紧急联系人"];
     
     CGFloat width = self.frame.size.width/3.0;
+    
+    self.btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.btn1 setImage:[UIImage imageNamed:normalImages[0]] forState:UIControlStateNormal];
+    self.btn1.backgroundColor = [UIColor blueColor];
+    [self.btn1 setFrame:CGRectMake((width-40)/2.0+width*0, 30, 40, 40)];
+    [self.btn1 setImage:[UIImage imageNamed:presslImages[0]] forState:UIControlStateHighlighted];
+    [self addSubview:self.btn1];
+    
+    self.btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.btn2 setImage:[UIImage imageNamed:normalImages[1]] forState:UIControlStateNormal];
+    self.btn2.backgroundColor = [UIColor blueColor];
+    [self.btn2 setFrame:CGRectMake((width-40)/2.0+width*1, 30, 40, 40)];
+    [self.btn2 setImage:[UIImage imageNamed:presslImages[1]] forState:UIControlStateHighlighted];
+    [self addSubview:self.btn2];
+    
+    self.btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.btn3 setImage:[UIImage imageNamed:normalImages[2]] forState:UIControlStateNormal];
+    self.btn3.backgroundColor = [UIColor blueColor];
+    [self.btn3 setFrame:CGRectMake((width-40)/2.0+width*2, 30, 40, 40)];
+    [self.btn3 setImage:[UIImage imageNamed:presslImages[2]] forState:UIControlStateHighlighted];
+    [self addSubview:self.btn3];
+
+    
+    
     for (int i = 0; i < 3; i++) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setImage:[UIImage imageNamed:normalImages[i]] forState:UIControlStateNormal];
-        button.backgroundColor = [UIColor blueColor];
-        [button setFrame:CGRectMake((width-40)/2.0+width*i, 30, 40, 40)];
-        [button setImage:[UIImage imageNamed:presslImages[i]] forState:UIControlStateHighlighted];
-        [self addSubview:button];
+//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [button setImage:[UIImage imageNamed:normalImages[i]] forState:UIControlStateNormal];
+//        button.backgroundColor = [UIColor blueColor];
+//        [button setFrame:CGRectMake((width-40)/2.0+width*i, 30, 40, 40)];
+//        [button setImage:[UIImage imageNamed:presslImages[i]] forState:UIControlStateHighlighted];
+//        [self addSubview:button];
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((width-80)/2.0+width*i, 80, 80, 25)];
         titleLabel.text = title[i];
         titleLabel.font = [UIFont systemFontOfSize:14.0];
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:titleLabel];
-        
+//
     }
 }
 
