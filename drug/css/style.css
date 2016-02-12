@@ -1,0 +1,47 @@
+.list {
+		background: #f6f6f6!important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+} 
+.list dd {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		border-color: #f6f6f6!important;
+} 
+.list dd .react {
+		background: #fff!important;
+		border-top: 1px #aaa solid;
+		border-bottom: 1px #aaa solid;
+} 
+.yy-info {
+		min-height: 50px;
+}
+.yy-title {
+		font-family: 'SimHei';
+		font-size: 18px;
+		color: #0370af!important;
+		line-height: 40px;
+}
+.yy-desc {
+	  word-spacing:-5px!important;
+		font-family: 'SimHei';
+		font-size: 14px;
+		line-height: 20px;
+		
+}
+.yy-desc span {
+		margin: 3px;
+		padding: 5px;
+		margin-right: 3px;
+		border: 1px #999 solid;
+		border-radius: 5px;
+		display:inline-block;
+}	
+.yy-desc span:hover {
+		background-color: #f6f6f6;
+		cursor: pointer;
+}
+.yy-desc span:active {
+		font-weight: normal;
+		border-color: #0370af;
+}
