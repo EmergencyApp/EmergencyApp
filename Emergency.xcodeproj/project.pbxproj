@@ -23,6 +23,14 @@
 		B18344571C6B837D0069C70B /* BaseInfo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18344551C6B837D0069C70B /* BaseInfo4ViewController.m */; };
 		B18344581C6B837D0069C70B /* BaseInfo4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B18344561C6B837D0069C70B /* BaseInfo4ViewController.xib */; };
 		B19655B91C6CC70500CD36CE /* BasicCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = B19655B81C6CC70500CD36CE /* BasicCardView.m */; };
+		B19655BF1C6D86AA00CD36CE /* HMFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B19655BC1C6D86AA00CD36CE /* HMFileManager.m */; };
+		B19655C01C6D86AA00CD36CE /* NSObject+Encodeing.m in Sources */ = {isa = PBXBuildFile; fileRef = B19655BE1C6D86AA00CD36CE /* NSObject+Encodeing.m */; };
+		B19655C41C6E07B300CD36CE /* SKAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B19655C31C6E07B300CD36CE /* SKAudioManager.m */; };
+		B19655C91C6E22F300CD36CE /* warning_audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B19655C81C6E22F300CD36CE /* warning_audio.m4a */; };
+		B19655D11C6E26A700CD36CE /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = B19655CC1C6E26A700CD36CE /* main.css */; };
+		B19655D21C6E26A700CD36CE /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = B19655CD1C6E26A700CD36CE /* style.css */; };
+		B19655D31C6E26A700CD36CE /* drug.html in Resources */ = {isa = PBXBuildFile; fileRef = B19655CE1C6E26A700CD36CE /* drug.html */; };
+		B19655D41C6E26A700CD36CE /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = B19655D01C6E26A700CD36CE /* jquery.min.js */; };
 		B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */; };
 		B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */; };
 		B1C06A4C1C68E908009D3D6E /* BaseInfo2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C06A4A1C68E908009D3D6E /* BaseInfo2ViewController.m */; };
@@ -61,6 +69,17 @@
 		B18344561C6B837D0069C70B /* BaseInfo4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfo4ViewController.xib; sourceTree = "<group>"; };
 		B19655B71C6CC70500CD36CE /* BasicCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCardView.h; sourceTree = "<group>"; };
 		B19655B81C6CC70500CD36CE /* BasicCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCardView.m; sourceTree = "<group>"; };
+		B19655BB1C6D86AA00CD36CE /* HMFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFileManager.h; sourceTree = "<group>"; };
+		B19655BC1C6D86AA00CD36CE /* HMFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFileManager.m; sourceTree = "<group>"; };
+		B19655BD1C6D86AA00CD36CE /* NSObject+Encodeing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Encodeing.h"; sourceTree = "<group>"; };
+		B19655BE1C6D86AA00CD36CE /* NSObject+Encodeing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Encodeing.m"; sourceTree = "<group>"; };
+		B19655C21C6E07B300CD36CE /* SKAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAudioManager.h; sourceTree = "<group>"; };
+		B19655C31C6E07B300CD36CE /* SKAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAudioManager.m; sourceTree = "<group>"; };
+		B19655C81C6E22F300CD36CE /* warning_audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = warning_audio.m4a; sourceTree = "<group>"; };
+		B19655CC1C6E26A700CD36CE /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
+		B19655CD1C6E26A700CD36CE /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		B19655CE1C6E26A700CD36CE /* drug.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = drug.html; sourceTree = "<group>"; };
+		B19655D01C6E26A700CD36CE /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
 		B1C06A441C68D81A009D3D6E /* BaseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfoViewController.h; sourceTree = "<group>"; };
 		B1C06A451C68D81A009D3D6E /* BaseInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoViewController.m; sourceTree = "<group>"; };
 		B1C06A461C68D81A009D3D6E /* BaseInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfoViewController.xib; sourceTree = "<group>"; };
@@ -95,6 +114,8 @@
 		B13A711A1C662F4000B8C536 = {
 			isa = PBXGroup;
 			children = (
+				B19655CA1C6E26A700CD36CE /* drug */,
+				B19655C81C6E22F300CD36CE /* warning_audio.m4a */,
 				B13A71251C662F4000B8C536 /* Emergency */,
 				B13A71241C662F4000B8C536 /* Products */,
 				F6C979F6642390C9C41195B3 /* Pods */,
@@ -217,9 +238,58 @@
 			path = WarningCardView;
 			sourceTree = "<group>";
 		};
+		B19655BA1C6D86AA00CD36CE /* HMFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				B19655BB1C6D86AA00CD36CE /* HMFileManager.h */,
+				B19655BC1C6D86AA00CD36CE /* HMFileManager.m */,
+				B19655BD1C6D86AA00CD36CE /* NSObject+Encodeing.h */,
+				B19655BE1C6D86AA00CD36CE /* NSObject+Encodeing.m */,
+			);
+			path = HMFileManager;
+			sourceTree = "<group>";
+		};
+		B19655C11C6E079E00CD36CE /* SKAudioManager */ = {
+			isa = PBXGroup;
+			children = (
+				B19655C21C6E07B300CD36CE /* SKAudioManager.h */,
+				B19655C31C6E07B300CD36CE /* SKAudioManager.m */,
+			);
+			path = SKAudioManager;
+			sourceTree = "<group>";
+		};
+		B19655CA1C6E26A700CD36CE /* drug */ = {
+			isa = PBXGroup;
+			children = (
+				B19655CB1C6E26A700CD36CE /* css */,
+				B19655CE1C6E26A700CD36CE /* drug.html */,
+				B19655CF1C6E26A700CD36CE /* js */,
+			);
+			path = drug;
+			sourceTree = "<group>";
+		};
+		B19655CB1C6E26A700CD36CE /* css */ = {
+			isa = PBXGroup;
+			children = (
+				B19655CC1C6E26A700CD36CE /* main.css */,
+				B19655CD1C6E26A700CD36CE /* style.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		B19655CF1C6E26A700CD36CE /* js */ = {
+			isa = PBXGroup;
+			children = (
+				B19655D01C6E26A700CD36CE /* jquery.min.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
 		B1C06A5B1C6ADA80009D3D6E /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				B19655C11C6E079E00CD36CE /* SKAudioManager */,
+				B19655BA1C6D86AA00CD36CE /* HMFileManager */,
 			);
 			path = ThirdPart;
 			sourceTree = "<group>";
@@ -267,6 +337,11 @@
 				TargetAttributes = {
 					B13A71221C662F4000B8C536 = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -294,9 +369,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1C06A4D1C68E908009D3D6E /* BaseInfo2ViewController.xib in Resources */,
+				B19655D21C6E26A700CD36CE /* style.css in Resources */,
 				B13A71361C662F4000B8C536 /* LaunchScreen.storyboard in Resources */,
 				B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */,
+				B19655D31C6E26A700CD36CE /* drug.html in Resources */,
 				B144DF571C6B63E3003AAEE3 /* BaseInfo3ViewController.xib in Resources */,
+				B19655D41C6E26A700CD36CE /* jquery.min.js in Resources */,
+				B19655D11C6E26A700CD36CE /* main.css in Resources */,
+				B19655C91C6E22F300CD36CE /* warning_audio.m4a in Resources */,
 				B18344581C6B837D0069C70B /* BaseInfo4ViewController.xib in Resources */,
 				B13A71331C662F4000B8C536 /* Assets.xcassets in Resources */,
 			);
@@ -363,6 +443,8 @@
 				B19655B91C6CC70500CD36CE /* BasicCardView.m in Sources */,
 				B13A71451C664A9D00B8C536 /* ViewController.m in Sources */,
 				B144DF5B1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m in Sources */,
+				B19655C41C6E07B300CD36CE /* SKAudioManager.m in Sources */,
+				B19655BF1C6D86AA00CD36CE /* HMFileManager.m in Sources */,
 				B1C06A501C6989BC009D3D6E /* PanView.m in Sources */,
 				B18344571C6B837D0069C70B /* BaseInfo4ViewController.m in Sources */,
 				B1C06A471C68D81A009D3D6E /* BaseInfoViewController.m in Sources */,
@@ -370,6 +452,7 @@
 				B13A71461C664A9D00B8C536 /* WKSectionView.m in Sources */,
 				B144DF561C6B63E3003AAEE3 /* BaseInfo3ViewController.m in Sources */,
 				B13A714A1C67366900B8C536 /* WarningViewController.m in Sources */,
+				B19655C01C6D86AA00CD36CE /* NSObject+Encodeing.m in Sources */,
 				B13A71521C683C1E00B8C536 /* BasicCardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
