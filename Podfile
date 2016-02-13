@@ -12,5 +12,6 @@ pod 'ZFTokenField'
 pod 'NYSegmentedControl'
 pod 'DateTools'
 pod 'ZLSwipeableView'
+pod 'MBProgressHUD'
 
 end
