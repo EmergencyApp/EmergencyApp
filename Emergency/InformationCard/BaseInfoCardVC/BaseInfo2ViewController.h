@@ -10,7 +10,8 @@
 
 @interface BaseInfo2ViewController : BasicCardViewController
 
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *firstname;
+@property (nonatomic, copy) NSString *lastname;
 @property (nonatomic, copy) NSString *birthday;
 @property (nonatomic, copy) NSString *age;
 @property (nonatomic, copy) NSString *sex;

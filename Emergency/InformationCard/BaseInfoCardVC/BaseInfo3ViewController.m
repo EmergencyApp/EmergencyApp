@@ -10,6 +10,7 @@
 #import <STPopup/STPopup.h>
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import "BaseInfo4ViewController.h"
+#import "HMFileManager.h"
 
 #import "InterfaceCustom.h"
 
@@ -24,12 +25,26 @@
 
 @implementation BaseInfo3ViewController
 
+- (void)loadData {
+    NSArray *savedData = (NSArray<NSArray *> *)[HMFileManager getObjectByFileName:@"baseInfoArray"];
+    
+    if (savedData && savedData[2]) {
+        [self.nationalityTF setText:savedData[2][0]];
+        [self.religionTF setText:savedData[2][1]];
+        [self.telPersonalTF setText:savedData[2][2]];
+        [self.addrTF setText:savedData[2][3]];
+        [self.phoneHomeTF setText:savedData[2][4]];
+    }
+}
+
 #pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavigationItem];
     [self setupForms];
+    
+    [self loadData];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -96,7 +111,8 @@
 - (void)push {
     BaseInfo4ViewController *nextStep = [[BaseInfo4ViewController alloc] init];
     
-    [nextStep setName:self.name];
+    [nextStep setFirstname:self.firstname];
+    [nextStep setLastname:self.lastname];
     [nextStep setBirthday:self.birthday];
     [nextStep setAge:self.age];
     [nextStep setSex:self.sex];

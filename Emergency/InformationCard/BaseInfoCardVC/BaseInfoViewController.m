@@ -13,6 +13,7 @@
 #import <STPopup/STPopup.h>
 #import <Colours/Colours.h>
 #import <DateTools/DateTools.h>
+#import "HMFileManager.h"
 
 #import "InterfaceCustom.h"
 
@@ -34,6 +35,18 @@
 
 @implementation BaseInfoViewController
 
+- (void)loadData {
+    NSArray *savedData = (NSArray<NSArray *> *)[HMFileManager getObjectByFileName:@"baseInfoArray"];
+    
+    if (savedData && savedData[0]) {
+        [self.firstNameTF setText:savedData[0][0]];
+        [self.lastNameTF setText:savedData[0][1]];
+        [self.birthdayTF setText:savedData[0][2]];
+        [self.ageLabel setText:savedData[0][3]];
+        [self.sexTF setText:savedData[0][4]];
+    }
+}
+
 #pragma mark - Lifecycle
 
 - (void)viewDidLoad {
@@ -41,6 +54,8 @@
     
     [self setupNavigationItem];
     [self setupForms];
+    
+    [self loadData];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -206,7 +221,8 @@
 - (void)push {
     BaseInfo2ViewController *nextStep = [[BaseInfo2ViewController alloc] init];
     
-    [nextStep setName:[NSString stringWithFormat:@"%@%@", self.firstNameTF.text, self.lastNameTF.text]];
+    [nextStep setFirstname:self.firstNameTF.text];
+    [nextStep setLastname:self.lastNameTF.text];
     [nextStep setBirthday:self.birthdayTF.text];
     [nextStep setAge:self.ageLabel.text];
     [nextStep setSex:self.sexTF.text];

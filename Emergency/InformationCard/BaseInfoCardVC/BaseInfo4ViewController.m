@@ -95,7 +95,8 @@
 #pragma mark - Next
 
 - (void)push {
-    NSArray *array = @[@[self.name,
+    NSArray *array = @[@[self.firstname,
+                         self.lastname,
                          self.birthday,
                          self.age,
                          self.sex,
