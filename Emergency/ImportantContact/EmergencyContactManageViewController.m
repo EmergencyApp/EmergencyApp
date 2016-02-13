@@ -12,6 +12,10 @@
 #import <AddressBook/ABPerson.h>
 #import <AddressBookUI/ABPersonViewController.h>
 
+#import <MBProgressHUD/MBProgressHUD.h>
+
+#import "HMFileManager.h"
+
 #import "CoreMediaFuncManagerVC.h"
 
 @interface EmergencyContactManageViewController ()<UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate>
@@ -27,7 +31,11 @@
     
     [self setTitle:@"紧急联系人"];
     
-    self.contactsArray = [[NSMutableArray alloc] init];
+    self.contactsArray = [HMFileManager getObjectByFileName:@"contactsArray"];
+    
+    if (!self.contactsArray || self.contactsArray.count==0) {
+        self.contactsArray = [[NSMutableArray alloc] init];
+    }
     
 //    [self.contactsArray addObject:@"哈哈"];
 //    [self.contactsArray addObject:@"呵呵"];
@@ -53,29 +61,31 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell;
+    
     
     if (indexPath.section == 0) {
             
         static NSString *cellID = @"contact";
-        cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellID];
         }
         NSString *name = [NSString stringWithFormat:@"%@%@", self.contactsArray[indexPath.row][@"lastname"], self.contactsArray[indexPath.row][@"firstname"]];
         [cell.textLabel setText:name];
         [cell.detailTextLabel setText:self.contactsArray[indexPath.row][@"phoneNO"]];
+        
+        return cell;
     } else {
     
-        static NSString *cellID = @"contact";
-        cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+        static NSString *cellID = @"add";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
         }
         [cell.textLabel setText:@"添加紧急联系人"];
+        
+        return cell;
     }
-    
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -112,6 +122,9 @@
         [self.contactsArray removeObjectAtIndex:indexPath.row];
         // Delete the row from the data source.
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [HMFileManager saveObject:self.contactsArray byFileName:@"contactsArray"];
+        
         [self.tableView endUpdates];
     }
 }
@@ -143,9 +156,28 @@
     NSLog(@"%@%@", lastnameString, firstnameString);
     
     if (phoneNO.length && (firstnameString.length || lastnameString.length)) {
+        
+        for (NSDictionary *dic in self.contactsArray) {
+            if ([dic[@"phoneNO"] isEqualToString:phoneNO]) {
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"该号码已经是紧急联系人";
+                [hud show:YES];
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC);
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    // Do something...
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                });
+                return;
+            }
+        }
+        
         [self.contactsArray addObject:@{@"firstname": firstnameString.length?firstnameString:@"",
                                        @"lastname": lastnameString.length?lastnameString:@"",
                                        @"phoneNO": phoneNO}];
+        
+        [HMFileManager saveObject:self.contactsArray byFileName:@"contactsArray"];
+        
         [self.tableView reloadData];
         [peoplePicker dismissViewControllerAnimated:YES completion:nil];
         return;
