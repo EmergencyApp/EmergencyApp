@@ -31,15 +31,14 @@
     
     [self setTitle:@"紧急联系人"];
     
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)];
+    [self.navigationItem setRightBarButtonItem:done];
+    
     self.contactsArray = [HMFileManager getObjectByFileName:@"contactsArray"];
     
     if (!self.contactsArray || self.contactsArray.count==0) {
         self.contactsArray = [[NSMutableArray alloc] init];
     }
-    
-//    [self.contactsArray addObject:@"哈哈"];
-//    [self.contactsArray addObject:@"呵呵"];
-//    [self.contactsArray addObject:@"额恩"];
     
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
@@ -189,6 +188,10 @@
     ABPersonViewController *personViewController = [[ABPersonViewController alloc] init];
     personViewController.displayedPerson = person;
     [peoplePicker pushViewController:personViewController animated:YES];
+}
+
+- (void)dismiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
