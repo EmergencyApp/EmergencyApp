@@ -48,7 +48,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return section?1:(self.contactsArray.count?self.contactsArray.count:1);
+    return section?1:self.contactsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,26 +56,15 @@
     UITableViewCell *cell;
     
     if (indexPath.section == 0) {
-        if (!self.contactsArray.count) {
             
-            static NSString *cellID = @"none";
-            cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-            if (!cell) {
-                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
-            }
-            
-            [cell.textLabel setText:@"没有任何紧急联系人"];
-        } else {
-            
-            static NSString *cellID = @"contact";
-            cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-            if (!cell) {
-                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellID];
-            }
-            NSString *name = [NSString stringWithFormat:@"%@%@", self.contactsArray[indexPath.row][@"lastname"], self.contactsArray[indexPath.row][@"firstname"]];
-            [cell.textLabel setText:name];
-            [cell.detailTextLabel setText:self.contactsArray[indexPath.row][@"phoneNO"]];
+        static NSString *cellID = @"contact";
+        cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellID];
         }
+        NSString *name = [NSString stringWithFormat:@"%@%@", self.contactsArray[indexPath.row][@"lastname"], self.contactsArray[indexPath.row][@"firstname"]];
+        [cell.textLabel setText:name];
+        [cell.detailTextLabel setText:self.contactsArray[indexPath.row][@"phoneNO"]];
     } else {
     
         static NSString *cellID = @"contact";
@@ -104,6 +93,31 @@
             NSLog(@"不能打");
         }];
     }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!indexPath.section && self.contactsArray.count) {
+        return YES;
+    } else {
+        return NO;
+    }
+    
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [self.tableView beginUpdates];
+        [self.contactsArray removeObjectAtIndex:indexPath.row];
+        // Delete the row from the data source.
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"移除";
 }
 
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker
