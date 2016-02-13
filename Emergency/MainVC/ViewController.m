@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "WKSectionView.h"
 #import "WarningViewController.h"
+#import "EmergencyContactManageViewController.h"
 
 #import "BaseInfoViewController.h"
 #import "PanView.h"
@@ -195,6 +196,8 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     WKSectionView *sectionView = [[WKSectionView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SCREEN_WIDTH, 120)];
     [sectionView.btn1 addTarget:self action:@selector(drug) forControlEvents:UIControlEventTouchUpInside];
+    [sectionView.btn2 addTarget:self action:@selector(contact) forControlEvents:UIControlEventTouchUpInside];
+    
     return sectionView;
 }
 
@@ -275,6 +278,12 @@
         }
         return;
     }
+}
+
+- (void)contact {
+    EmergencyContactManageViewController *tableVC = [[EmergencyContactManageViewController  alloc] init];
+    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    [self presentViewController:naviVC animated:YES completion:nil];
 }
 
 - (void)drug {
