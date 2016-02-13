@@ -22,6 +22,9 @@
 		B144DF5E1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = B144DF5D1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m */; };
 		B18344571C6B837D0069C70B /* BaseInfo4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18344551C6B837D0069C70B /* BaseInfo4ViewController.m */; };
 		B18344581C6B837D0069C70B /* BaseInfo4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B18344561C6B837D0069C70B /* BaseInfo4ViewController.xib */; };
+		B18D07BD1C6F28860032A736 /* EmergencyContactManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18D07BB1C6F28860032A736 /* EmergencyContactManageViewController.m */; };
+		B18D07BE1C6F28860032A736 /* EmergencyContactManageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B18D07BC1C6F28860032A736 /* EmergencyContactManageViewController.xib */; };
+		B18D07C61C6F58A60032A736 /* CoreMediaFuncManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B18D07C51C6F58A60032A736 /* CoreMediaFuncManagerVC.m */; };
 		B19655B91C6CC70500CD36CE /* BasicCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = B19655B81C6CC70500CD36CE /* BasicCardView.m */; };
 		B19655BF1C6D86AA00CD36CE /* HMFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B19655BC1C6D86AA00CD36CE /* HMFileManager.m */; };
 		B19655C01C6D86AA00CD36CE /* NSObject+Encodeing.m in Sources */ = {isa = PBXBuildFile; fileRef = B19655BE1C6D86AA00CD36CE /* NSObject+Encodeing.m */; };
@@ -67,6 +70,11 @@
 		B18344541C6B837D0069C70B /* BaseInfo4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfo4ViewController.h; sourceTree = "<group>"; };
 		B18344551C6B837D0069C70B /* BaseInfo4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfo4ViewController.m; sourceTree = "<group>"; };
 		B18344561C6B837D0069C70B /* BaseInfo4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfo4ViewController.xib; sourceTree = "<group>"; };
+		B18D07BA1C6F28860032A736 /* EmergencyContactManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyContactManageViewController.h; sourceTree = "<group>"; };
+		B18D07BB1C6F28860032A736 /* EmergencyContactManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyContactManageViewController.m; sourceTree = "<group>"; };
+		B18D07BC1C6F28860032A736 /* EmergencyContactManageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmergencyContactManageViewController.xib; sourceTree = "<group>"; };
+		B18D07C41C6F58A60032A736 /* CoreMediaFuncManagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreMediaFuncManagerVC.h; sourceTree = "<group>"; };
+		B18D07C51C6F58A60032A736 /* CoreMediaFuncManagerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreMediaFuncManagerVC.m; sourceTree = "<group>"; };
 		B19655B71C6CC70500CD36CE /* BasicCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCardView.h; sourceTree = "<group>"; };
 		B19655B81C6CC70500CD36CE /* BasicCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCardView.m; sourceTree = "<group>"; };
 		B19655BB1C6D86AA00CD36CE /* HMFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFileManager.h; sourceTree = "<group>"; };
@@ -134,6 +142,7 @@
 		B13A71251C662F4000B8C536 /* Emergency */ = {
 			isa = PBXGroup;
 			children = (
+				B19655D61C6E3B9F00CD36CE /* ImportantContact */,
 				B18344591C6CB47C0069C70B /* WarningCardView */,
 				B1C06A5B1C6ADA80009D3D6E /* ThirdPart */,
 				B13A714E1C683C0100B8C536 /* InformationCard */,
@@ -238,6 +247,15 @@
 			path = WarningCardView;
 			sourceTree = "<group>";
 		};
+		B18D07C31C6F58A60032A736 /* CoreMediaFuncManagerVC */ = {
+			isa = PBXGroup;
+			children = (
+				B18D07C41C6F58A60032A736 /* CoreMediaFuncManagerVC.h */,
+				B18D07C51C6F58A60032A736 /* CoreMediaFuncManagerVC.m */,
+			);
+			path = CoreMediaFuncManagerVC;
+			sourceTree = "<group>";
+		};
 		B19655BA1C6D86AA00CD36CE /* HMFileManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,9 +303,20 @@
 			path = js;
 			sourceTree = "<group>";
 		};
+		B19655D61C6E3B9F00CD36CE /* ImportantContact */ = {
+			isa = PBXGroup;
+			children = (
+				B18D07BA1C6F28860032A736 /* EmergencyContactManageViewController.h */,
+				B18D07BB1C6F28860032A736 /* EmergencyContactManageViewController.m */,
+				B18D07BC1C6F28860032A736 /* EmergencyContactManageViewController.xib */,
+			);
+			path = ImportantContact;
+			sourceTree = "<group>";
+		};
 		B1C06A5B1C6ADA80009D3D6E /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				B18D07C31C6F58A60032A736 /* CoreMediaFuncManagerVC */,
 				B19655C11C6E079E00CD36CE /* SKAudioManager */,
 				B19655BA1C6D86AA00CD36CE /* HMFileManager */,
 			);
@@ -372,6 +401,7 @@
 				B19655D21C6E26A700CD36CE /* style.css in Resources */,
 				B13A71361C662F4000B8C536 /* LaunchScreen.storyboard in Resources */,
 				B1C06A481C68D81A009D3D6E /* BaseInfoViewController.xib in Resources */,
+				B18D07BE1C6F28860032A736 /* EmergencyContactManageViewController.xib in Resources */,
 				B19655D31C6E26A700CD36CE /* drug.html in Resources */,
 				B144DF571C6B63E3003AAEE3 /* BaseInfo3ViewController.xib in Resources */,
 				B19655D41C6E26A700CD36CE /* jquery.min.js in Resources */,
@@ -441,6 +471,7 @@
 				B13A71281C662F4000B8C536 /* main.m in Sources */,
 				B144DF5E1C6B7AFF003AAEE3 /* NYSegmentedControl+InterfaceCustom.m in Sources */,
 				B19655B91C6CC70500CD36CE /* BasicCardView.m in Sources */,
+				B18D07C61C6F58A60032A736 /* CoreMediaFuncManagerVC.m in Sources */,
 				B13A71451C664A9D00B8C536 /* ViewController.m in Sources */,
 				B144DF5B1C6B7929003AAEE3 /* JVFloatLabeledTextField+InterfaceCustom.m in Sources */,
 				B19655C41C6E07B300CD36CE /* SKAudioManager.m in Sources */,
@@ -453,6 +484,7 @@
 				B144DF561C6B63E3003AAEE3 /* BaseInfo3ViewController.m in Sources */,
 				B13A714A1C67366900B8C536 /* WarningViewController.m in Sources */,
 				B19655C01C6D86AA00CD36CE /* NSObject+Encodeing.m in Sources */,
+				B18D07BD1C6F28860032A736 /* EmergencyContactManageViewController.m in Sources */,
 				B13A71521C683C1E00B8C536 /* BasicCardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
