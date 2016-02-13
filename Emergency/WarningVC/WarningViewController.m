@@ -244,9 +244,18 @@
         
         NSArray *savedData = (NSArray<NSArray *> *)[HMFileManager getObjectByFileName:@"baseInfoArray"];
         
-        [cell.textLabel setText:self.titleArray[tableView.tag-1][indexPath.row]];
-        [cell.detailTextLabel setText:savedData[tableView.tag-1][indexPath.row]];
-        
+        if (tableView.tag==1) {
+            if (indexPath.row==0) {
+                [cell.textLabel setText:self.titleArray[tableView.tag-1][indexPath.row]];
+                [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@%@",savedData[tableView.tag-1][indexPath.row+1],savedData[tableView.tag-1][indexPath.row]]];
+            } else{
+                [cell.textLabel setText:self.titleArray[tableView.tag-1][indexPath.row]];
+                [cell.detailTextLabel setText:savedData[tableView.tag-1][indexPath.row+1]];
+            }
+        } else {
+            [cell.textLabel setText:self.titleArray[tableView.tag-1][indexPath.row]];
+            [cell.detailTextLabel setText:savedData[tableView.tag-1][indexPath.row]];
+        }
         return cell;
 
     }
