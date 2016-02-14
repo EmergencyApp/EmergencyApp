@@ -128,7 +128,7 @@
     
     switch (_tableViewSN) {
         case 0:{
-            baseinfocard = [[BasicCardView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width/5*4, 44*(self.contactsArray.count)?self.contactsArray.count:1+68)];
+            baseinfocard = [[BasicCardView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width/5*4, 44*((self.contactsArray.count)?self.contactsArray.count:1)+68)];
             [baseinfocard.tableView setUserInteractionEnabled:YES];
             [baseinfocard.tableView setScrollEnabled:NO];
             break;
